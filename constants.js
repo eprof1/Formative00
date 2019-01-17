@@ -41,6 +41,9 @@ function setVariables() {
 
     document.getElementById("xLicense").innerHTML = ccLicense;
     document.getElementById("xfooter").innerHTML = Date();
-    document.getElementById("xpath").innerHTML = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value + "&#92;";
+  //  document.getElementById("xpath").innerHTML = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value + "&#92;";
+
+    document.getElementById("xpath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;
+
 
 }
