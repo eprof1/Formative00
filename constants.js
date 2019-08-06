@@ -2,15 +2,15 @@
 
 // student- update variables below this line
 
-var xeMail = "Your_StarID@go.minnstate.edu";
+var xeMail = "MyStarID@go.minnstate.edu";
 
-var xFirstName = "Your_First_Name";
+var xFirstName = "MyFirstName";
 
-var xLastName = "Your_Last_Name";
+var xLastName = "MyLastName";
 
-var xStarID = "Your_StarID";
+var xStarID = "MyStarID";
 
-var xSection = "Your_Section";
+var xSection = "MySection";
 
 
 // student-do no modify variables below here, unless told to do so.
@@ -19,7 +19,7 @@ var xSection = "Your_Section";
 var ccLicense = '<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License"  src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span >eProfessor Immersive Learning Environment</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://eprofessor.azurewebsites.net" property="cc:attributionName" rel="cc:attributionURL">Patrick G Paulson</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.';
 
 // current semester
-var xSemester = "Spring2019";
+var xSemester = "Fall2019";
 // no class constants allowed in this Formative00 constants file
 // var xClass = "MIS202";
 
@@ -43,7 +43,7 @@ function setVariables() {
     document.getElementById("xfooter").innerHTML = Date();
   //  document.getElementById("xpath").innerHTML = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value + "&#92;";
 
-    document.getElementById("xpath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;
+    document.getElementById("xpath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92; " + document.getElementById("assignment").value;
 
 
 }

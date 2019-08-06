@@ -23,19 +23,19 @@
         <div class="row col-lg-12">
             <div class="col-lg-3">
                 <label class="text-primary" for="FirstName">First Name:</label>
-                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name">
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="MyFirstName">
             </div>
             <div class="col-lg-3">
                 <label class="text-primary" for="LastName">Last Name:</label>
-                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name">
+                <input class="form-control" name="LastName" id="LastName" type="text" value="MyLastName">
             </div>
             <div class="col-lg-3">
                 <label class="text-primary" for="pin">StarID:</label>
-                <input class="form-control" name="pin" id="pin" type="text" value="default StarID">
+                <input class="form-control" name="pin" id="pin" type="text" value="MyStarID">
             </div>
             <div class="col-lg-3">
                 <label class="text-primary" for="email">Email:</label>
-                <input class="form-control" name="email" id="email" type="email" value="default email address">
+                <input class="form-control" name="email" id="email" type="email" value="MyStarID@go.minnstate.edu">
             </div>
         </div>
 
@@ -46,11 +46,11 @@
             </div>
             <div class="col-lg-3">
                 <label class="text-primary" for="class">Class:</label>
-                <input class="form-control" name="class" id="class" value="YourClass" type="text">
+                <input class="form-control" name="class" id="class" value="MyClass" type="text">
             </div>
             <div class="col-lg-3">
                 <label class="text-primary" for="section">Section:</label>
-                <input class="form-control" name="section" id="section" value="YourSection" type="text">
+                <input class="form-control" name="section" id="section" value="MySection" type="text">
             </div>
             <div class="col-lg-3">
                 <label class="text-primary" for="assignment">Assignment:</label>
@@ -182,7 +182,7 @@
                   <li>Learn to Google any error message before asking anyone else</li>
                   <li>Refer to <a href="https://www.linkedin.com/learning" class="bg-info text-white">LinkedIn Learning</a> </li>
                   <li>Learn to use <a href="https://stackoverflow.com/" target="_blank" class="bg-info text-white">Stack Overflow</a></li>
-                  <li>Learn to use Tutor.com; see D2L for more info</li>
+                  <li>Learn to use <a href="https://winona.learn.minnstate.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1722&amp;type=lti&amp;rcode=minnstate-25390810&amp;srcou=1722" target="_blank" class="bg-info text-white">Tutor.com</a>; see D2L for more info</li>
               </ol>
                 </li>
                 <li>When seeking advice from teaching assistants or professor via email use proper etiquette
@@ -205,12 +205,11 @@
                 It is essential that you know how to create folder structures to organize your work.<br />
                 You will use OneDrive to do this.<br />
                 If you do not have OneDrive installed and configured, before proceeding, refer to the resources in the Assignment Overview above.<br />
-                Some of your work will primarily be stored on your laptop, such as screen shots that you will make to prove that you have accomplished certain tasks.<br />
-                Use File Explorer to create a series of folders in OneDrive with the path: '<code><span id="xpath"></span></code>'<br />
-
-                OneDrive will look like the image below, but with the appropriate course:
+                Some of your work will be stored on your laptop, such as screen shots to prove that you have accomplished certain tasks.<br />
+                During this course you will use File Explorer to create a series of folders in OneDrive with paths such as: ' <code><span id="xpath"></span></code> '
+                <script>document.getElementById("xPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;;</script>
                 <br />
-
+                OneDrive will look like the image below, but with the appropriate course:   <br />
 
                 <a href="OneDriveFolder.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('OneDriveFolder.PNG', 'popup'); return false;">
                     <img src="OneDriveFolder.PNG" width="300" alt="One Drive" class="img-responsive img-responsive" /></a> OneDrive Folder<br />
@@ -227,7 +226,7 @@
 
                     <!--  PgP 2/4/2018 create path using constants and current document assignment -->
                     Save the screen shot  as &quot;Ex1&quot; in your ' <code><span id="aPath"></span></code>
-                    <script>document.getElementById("aPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;;</script>
+                    <script>document.getElementById("aPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;;</script>
                     ' folder. 
                     <br />
 
@@ -289,7 +288,7 @@
 
                     <!--  PgP 2/4/2018 create path using constants and current document assignment -->
                     Save the screen shot  as &quot;Ex2&quot; in your '<code> <span id="bPath"></span></code>
-                    <script>document.getElementById("bPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;;</script>
+                    <script>document.getElementById("bPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;;</script>
                     ' folder. 
                     <br />
 
@@ -383,7 +382,7 @@
                     Then use the Snipping Tool to make a screen shot of all three monitors.<br />
                     <p>
                         Save the screen shot  as &quot;Ex3&quot; in your ' <code><span id="cPath"></span></code>
-                        <script>document.getElementById("cPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;; </script>
+                        <script>document.getElementById("cPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;; </script>
                         ' folder.<br />
                     </p>
             </div>
@@ -471,7 +470,7 @@
                 </p>
                 <p>
                     Save the screen shot  as &quot;Ex4&quot; in your ' <code><span id="dPath"></span></code>
-                    <script>document.getElementById("dPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;; </script>
+                    <script>document.getElementById("dPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;; </script>
                     ' folder.<br />
                 </p>
 
@@ -491,10 +490,10 @@
             <ol>
                 <li>Using a browser, click on the appropriate url for your course listed below.<br />
                     Note that if this is the first time you have used Zoom, you may need to click the &#39;download &amp; run Zoom&#39; link.:<br />
-                    MIS 452-<a class="bg-info text-white" href="https://minnstate.zoom.us/j/175261264" target="_blank">https://minnstate.zoom.us/j/175261264</a><br />
-                    MIS 342-<a class="bg-info text-white" href="https://minnstate.zoom.us/j/509412575" target="_blank">https://minnstate.zoom.us/j/509412575</a><br />
-                    MIS 362-01(online)-<a class="bg-info text-white" href="https://minnstate.zoom.us/j/745339697" target="_blank">https://minnstate.zoom.us/j/745339697</a><br />
-                    MIS 362-02(face to face)-<a class="bg-info text-white" href="https://minnstate.zoom.us/j/745339697" target="_blank">https://minnstate.zoom.us/j/745339697</a><br />
+                    MIS 452-<a class="bg-info text-white" href="https://minnstate.zoom.us/j/793611507" target="_blank">https://minnstate.zoom.us/j/793611507</a><br />
+                    MIS 342-<a class="bg-info text-white" href="https://minnstate.zoom.us/j/997510546" target="_blank">https://minnstate.zoom.us/j/997510546</a><br />
+                    MIS 362-01(online)-<a class="bg-info text-white" href="https://minnstate.zoom.us/j/672034703" target="_blank">https://minnstate.zoom.us/j/672034703</a><br />
+                    MIS 362-02(face to face)-<a class="bg-info text-white" href="https://minnstate.zoom.us/j/633799952" target="_blank">https://minnstate.zoom.us/j/633799952</a><br />
                     <li>Complete single sign on- SSO- using StarID@minnstate.edu </li>
                 <li>Use your StarID password</li>
                 <li>screen shot below may be wrong, PLEASE CHECK</li>
@@ -512,7 +511,7 @@
             </p>
             <p>
                 Save the screen shot  as &quot;Ex5&quot; in your ' <code><span id="ePath"></span></code>
-                <script>document.getElementById("ePath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;; </script>
+                <script>document.getElementById("ePath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;; </script>
                 ' folder.<br />
             </p>
 
@@ -586,7 +585,7 @@
                 <p>(10) 6. After installing the D2L calendar feed for this course into your Outlook desktop client, take a screenshot of this course's calendar in Outlook using the Snipping tool.</p>
                 <p>
                     Save the screen shot  as &quot;Ex6&quot; in your ' <code><span id="fPath"></span></code>
-                    <script>document.getElementById("fPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;; </script>
+                    <script>document.getElementById("fPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;; </script>
                     ' folder.<br />
                 </p>
             </div>
@@ -657,7 +656,7 @@
             <div class="col-lg-12 text-primary">
                 <p>
                     (10) 7. Make sure to print the Cisco VPN Statistics file as &#39;Ex7.pdf&#39;&#39; and save it in the folder ' <code><span id="gPath"></span></code>
-                    <script>document.getElementById("gPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;; </script>
+                    <script>document.getElementById("gPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;; </script>
                     '
                     <br />
                 </p>
@@ -710,7 +709,7 @@
             <p>(10) 8. After subscriping to the New York Times, login and take a screenshot of the current edition's home page using the Snipping tool.</p>
             <p>
                 Save the screen shot  as &quot;Ex8&quot; in your ' <code><span id="hPath"></span></code>
-                <script>document.getElementById("hPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;; </script>
+                <script>document.getElementById("hPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;; </script>
                 ' folder.<br />
             </p>
         </div>
@@ -752,7 +751,7 @@
             <p>(10) 9. After subscribing to the Wall Street Journal, login and take a screenshot of the front page using the Snipping tool.</p>
             <p>
                 Save the screen shot  as &quot;Ex8WSJ&quot; in your ' <code><span id="jPath"></span></code>
-                <script>document.getElementById("jPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;; </script>
+                <script>document.getElementById("jPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;; </script>
                 ' folder.<br />
             </p>
         </div>
@@ -784,7 +783,7 @@
             <p>(10) 10. After accessing Flipster, open the latest issue of Wired magazine and take a screenshot of the cover using the Snipping tool.</p>
             <p>
                 Save the screen shot  as &quot;Ex8Flip&quot; in your ' <code><span id="kPath"></span></code>
-                <script>document.getElementById("kPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;; </script>
+                <script>document.getElementById("kPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;; </script>
                 ' folder.<br />
             </p>
         </div>
@@ -827,13 +826,13 @@
                 <li>In the bottom center of the &#39;Print Pictures&#39; dialog box <strong>uncheck</strong> the box &quot;Fit picture to frame&quot;</li>
                 <li>See the howtogeek article for more options.</li>
                 <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your ' <code><span id="lPath"></span></code>
-                    <script>document.getElementById("lPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;; </script>
+                    <script>document.getElementById("lPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;; </script>
                     ' folder.<br />
 
                 </li>
                 <li>Use PDFill (installed in <a href="#Exercise02">Exercise 2</a>) to merge the ScreenShots.pdf file with the Ex7.pdf file created in Exercise 7, and save it as &#39;Formative00.pdf&#39; in your
 ' <code><span id="mPath"></span></code>
-                    <script>document.getElementById("mPath").innerHTML = " OneDrive - MNSCU &#62;" + document.getElementById("class").value + " &#62; " + document.getElementById("assignment").value;; </script>
+                    <script>document.getElementById("mPath").innerHTML = "OneDrive - MNSCU&#92;" + document.getElementById("class").value + "&#92;" + document.getElementById("assignment").value;; </script>
                     ' folder.<br />
                     <br />
                     <br />
