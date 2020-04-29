@@ -3,7 +3,10 @@
 
 <head>
 
-	<!-- PgP 4/28/2020  this works fine.   -->
+	<!-- With this version going to put the firstname, lastname... on the first page.
+		This will allow student to see assignment with blank fields.  Then when they get to Part 2 and do Exercise 1, put in
+		-->
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -24,9 +27,6 @@
 
 	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
 
-
-
-
 	<title>Formative00</title>
 </head>
 
@@ -34,13 +34,11 @@
 
 <body onload="setVariables()">
 
-	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment1" id="frmAssignment1">
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
 		<input name="InstID" id="InstID" value="00617282" type="hidden" />
 		<!-- had to put assignment here, because it is used in the path calculation -->
-		<input  name="assignment" id="assignment" value="Formative00" type="hidden" >
+		<!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
 						
-		<!-- calculate the path based on the assignment -->
-		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script> 
 
 		<ul class="nav nav-pills text-uppercase lead">
 			<li class="active"><a data-toggle="pill" href="#Objectives">Learning Objectives</a></li>
@@ -52,7 +50,57 @@
 
 		<hr />
 
-		<h1 class=" text-center">Formative00-Basic Course Technologies</h1>
+
+
+					<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+					<div class="row col-lg-12">
+						<div class="col-lg-3">
+							<label class="text-primary" for="FirstName">First Name:</label>
+							<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+						</div>
+						<div class="col-lg-3">
+							<label class="text-primary" for="LastName">Last Name:</label>
+							<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+						</div>
+						<div class="col-lg-3">
+							<label class="text-primary" for="pin">StarID:</label>
+							<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+						</div>
+						<div class="col-lg-3">
+							<label class="text-primary" for="email">Email:</label>
+							<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+						</div>
+					</div>
+
+					<div class="row col-lg-12">
+						<div class="col-lg-3">
+							<label class="text-primary" for="semester">Semester:</label>
+							<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+						</div>
+						<div class="col-lg-3">
+							<label class="text-primary" for="class">Class:</label>
+							<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+						</div>
+						<div class="col-lg-3">
+							<label class="text-primary" for="section">Section:</label>
+							<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+						</div>
+						<div class="col-lg-3">
+							<label class="text-primary" for="section">Assignment:</label>
+							<input class="form-control" name="assignment" id="assignment" value="Formative00" type="text" readonly="readonly">
+						</div>
+
+					</div>
+					<!-- -end-Student, class and assignment information-end -->
+
+		<!-- calculate the path based on the assignment -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script> 
+
+
+
+
+
+		<h1 class=" text-center">Basic Course Technologies</h1>
 
 		<hr />
 
@@ -60,7 +108,7 @@
 
 
 			<div id="Objectives" class="col-lg-12 tab-pane fade in active">
-				<h1 class="text-center">Learning Objectives </h1>
+				<h2 class="text-center">Learning Objectives </h2>
 
 				<p>
 					This assignment introduces fundamentally important concepts needed for this course.<br />
@@ -90,7 +138,7 @@
 
 
 			<div id="Overview" class="col-lg-12 tab-pane fade">
-				<h1 class="text-center">Assignment Overview</h1>
+				<h2 class="text-center">Assignment Overview</h2>
 
 
 				<p>
@@ -199,13 +247,14 @@
 
 
 			<div id="Part1" class="col-lg-12 tab-pane fade">
-				<div class="col-lg-12 h3 text-danger">
-					175 Points
+
+
+
+				<div class="row col-lg-12">
+								<div class="col-lg-4 h3 text-danger">125 points</div>
+								<div class="col-lg-4 h2 text-center">Part 1</div>
+								<div class="col-lg-1"></div>
 				</div>
-
-				<hr />
-
-				<h1 class="col-lg-12 text-center">Part 1 </h1>
 
 
 
@@ -257,7 +306,8 @@
 
 						<div class="text-primary">
 							<p>
-								(25) 1. Use the Snipping Tool to make a screen shot of  File Explorer, showing the constants.js file in the T: drive folder that you just updated using NotePad. It will look like this:<br />
+								<strong>(25) 1. Use the Snipping Tool to make a screen shot of  File Explorer, showing the constants.js file in the T: drive folder that you just updated using NotePad.</strong><br />
+								It will look like this:<br />
 								<a href="ConstantsJS.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('ConstantsJS.PNG', 'popup'); return false;">
 									<img src="ConstantsJS.PNG" width="300" alt="personal constants file" class="img-responsive img-responsive" /></a> constants.js File<br />			
 
@@ -326,7 +376,8 @@
 
 						<div class="text-primary">
 							<p>
-								(25) 2. Use the Snipping Tool to make a screen shot of  the 'HP PC Hardware Diagnostics Window' showing that your laptop 'Passed' ALL tests.
+								<strong>(25) 2. Use the Snipping Tool to make a screen shot of  the 'HP PC Hardware Diagnostics Window' showing that your laptop 'Passed' ALL tests.
+                    </strong>
                     <br />
 
 								<!--  PgP 2/4/2018 create path using constants and current document assignment -->
@@ -415,12 +466,16 @@
 							<li>Close the dialog box.</li>
 						</ol>
 
+						<p>
+							Display content on all three monitors, such as websites.
+						</p>
+
 
 						<div class="text-primary">
 							<p>
-								(25) 3. Display content on all three monitors, such as websites.
-                        <br />
-								Use the Snipping Tool in &#39;Full-screen Snip&#39; Mode to make a screen shot of all three monitors.<br />
+								<strong>(25) 3.	Use the Snipping Tool in &#39;Full-screen Snip&#39; Mode to make a screen shot of all three monitors.
+							</strong>
+							</p>
 								<p>
 									Save the screen shot  as &quot;Ex3&quot; in your ' <code><span id="cPath"></span></code>
 									<script>document.getElementById("cPath").innerHTML = Path; </script>
@@ -468,14 +523,14 @@
 
 						<div class="col-lg-12 text-primary">
 							<p>
-								(25) 5. After installing all of the required software open the Control Panel. <br />
-								In the upper right corner click the drop-down arrow and select 'Small Icons'.
-							</p>
-							<p>
+								After installing PDFill open the Control Panel. <br />
+								In the upper right corner click the drop-down arrow and select 'Small Icons'.<br />
+							
 								Make sure you are at 'Control Panel&gt;All Control Panel Items&gt;Programs and Features'<br />
 								Make the window big enough to view all the icons.<br />
-								Use the Snipping Tool to make a screen shot.<br />
-								Use the <span class="bg-info text-white">Yellow Highlighter Tool</span> and highlight the software listed above.
+								<strong>(25)  4. With the Snipping Tool make a screen shot.<br />
+								Use the </strong> <span class="bg-info text-white"><strong>Yellow Highlighter Tool</strong></span><strong> and highlight the software listed above.
+							</strong>
 							</p>
 							<p>
 								Save the screen shot  as &quot;Ex4&quot; in your ' <code><span id="ddPath"></span></code>
@@ -503,37 +558,41 @@
 					<div class="col-lg-12"><a href="#ExercisePDF1" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
 
 					<div id="ExercisePDF1" class="collapse in  col-lg-12">
+						<p>	
+							You will create one .pdf (portable document format) file from the screen shots taken above.
+						</p>
+
 						<p>
-							To proceed you must have Windows 10 installed, which includes &#39;Print to PDF&#39; ; or Adobe Acrobat Professional installed, which will appear as &quot;Adobe PDF &quot; in the Print Dialog Box.<br />
+							Make sure you have Windows 10 installed, and you have the option &#39;Microsoft Print to PDF&#39; in the Print Dialog Box.<br />
+							If not, contact a TA or the professor.<br />
 							<a href="ssPrintToPDF.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('ssPrintToPDF.JPG', 'popup'); return false;">
 								<img alt="print to pdf" class="img-rounded img-responsive" src="ssPrintToPDF.JPG" title="print dialog box" width="300" /></a>
 							<span>Print dialog box</span>
 							<br />
-						</p>
-						<p>
-							
-							<br />
-							You will be creating one .pdf (portable document format) file from the screen shots that you have taken, and the pdfs that you have generated.
 						</p>
 
 						<ol>
 							<li>Open File Explorer, navigate to your ' <code><span id="oPath"></span></code>
 								<script>document.getElementById("oPath").innerHTML = Path; </script>
 								' folder.<br />
-								make sure the screen shot files are properly named(Ex1, Ex2, Ex3 , Ex4.. ) &nbsp; </li>
+								make sure the screen shot files are properly named (Ex1, Ex2, Ex3 , Ex4.. )</li>
 							<li>Select all of the screen shots. </li>
 							<li>Right Click and select &#39;Print&#39; from the pop-up menu.</li>
 							<li>In the bottom center of the &#39;Print Pictures&#39; dialog box <strong>uncheck</strong> the box &quot;Fit picture to frame&quot;</li>
-							<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;Formative01_Part1.pdf&quot; in your ' <code><span id="qqPath"></span></code>
+							<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;Formative00_Part1.pdf&quot; in your ' <code><span id="qqPath"></span></code>
 								<script>document.getElementById("qqPath").innerHTML = Path; </script>
 								' folder.<br />
+								<a href="PrintToPdf.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('PrintToPdf.PNG', 'popup'); return false;">
+									<img alt="Print to PDF" class="img-rounded img-responsive" src="PrintToPdf.PNG" width="300" /></a>
+								<br />
 							</li>
+							<li>You have created a PDF file that contains all 4 screen shots. It is viewable in your Chrome browser, or using Adbobe Acrobat Reader.  Do not worry about the order of the screen shots, nor the rotation.</li>
 
 						</ol>
 
 
 						<div class="col-lg-12 text-primary">
-							<p>(25) 6. Upload your file 'Formative00_Part1.pdf' to the D2L 'Formative00_Part1' Assignment folder.</p>
+							<p><strong>(25) 5. Upload your file 'Formative00_Part1.pdf' to the D2L 'Formative00_Part1' Assignment folder.</strong></p>
 
 						</div> 
 						<hr />
@@ -572,73 +631,31 @@
 					<!-- Calculate the correct Path for saving the files -->
 				<!--	<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>  -->
 
-					<div class="col-lg-12 h3 text-danger">
-						140 Points
-            <hr />
-					</div>
 
-
-
-
-					<h1 class="col-lg-12 text-center">Part 2</h1>
-
-
-
-
-					<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
-					<div class="row col-lg-12">
-						<div class="col-lg-3">
-							<label class="text-primary" for="FirstName">First Name:</label>
-							<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
-						</div>
-						<div class="col-lg-3">
-							<label class="text-primary" for="LastName">Last Name:</label>
-							<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
-						</div>
-						<div class="col-lg-3">
-							<label class="text-primary" for="pin">StarID:</label>
-							<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
-						</div>
-						<div class="col-lg-3">
-							<label class="text-primary" for="email">Email:</label>
-							<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
-						</div>
-					</div>
 
 					<div class="row col-lg-12">
-						<div class="col-lg-3">
-							<label class="text-primary" for="semester">Semester:</label>
-							<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
-						</div>
-						<div class="col-lg-3">
-							<label class="text-primary" for="class">Class:</label>
-							<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
-						</div>
-						<div class="col-lg-3">
-							<label class="text-primary" for="section">Section:</label>
-							<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
-						</div>
+									<div class="col-lg-4 h3 text-danger">150 points</div>
+									<div class="col-lg-4 h2 text-center">Part 2</div>
+									<div class="col-lg-1"></div>
 					</div>
-					<!-- -end-Student, class and assignment information-end -->
+
+
 
 
 
 					<hr />
 					<div class="row col-lg-12">
 
-						<div class="text-primary">
-							(25) 7. Follow the instructions below to retrieve your Visual Studio Product Key and paste it below.<br />
+						<p>
+							Follow the instructions in Exercise 5 to retrieve your Visual Studio Product Key and paste it in the text box below.<br />
 							This will ensure that you have a copy of the Product Key in case you need it later in the semester.
 							<!-- Enter your answer in the VALUE field below   GROK -->
-							<input class="form-control" name="q7" type="text" id="q7" value="Product Key:  ">
-							Then press the &#39;SUBMIT&#39; button below, and afterwards return to this page.
-							<hr />
-						</div>
+							<input class="form-control" name="q6" type="text" id="q6" value="Product Key:  ">
+							<p class="text-primary"><strong>(50) 6. Press the &#39;SUBMIT&#39; button below, and afterwards return to this page to continue with the assignment.</strong></p>
 
 					</div>
 
 					<div class="col-lg-12">
-						<br />
 						<input class="text-danger btn-block btn-lg" name="Submit" value="SUBMIT" type="submit">
 						<br />
 					</div>
@@ -732,14 +749,15 @@
 
 						<div class="col-lg-12 text-primary">
 							<p>
-								(25) 8. After installing all of the required software open the Control Panel. <br />
+								After installing Visual Studio open the Control Panel. <br />
 								In the upper right corner click the drop-down arrow and select 'Small Icons'.
 							</p>
 							<p>
 								Make sure you are at 'Control Panel&gt;All Control Panel Items&gt;Programs and Features'<br />
 								Make the window big enough to view all the icons.<br />
+								<strong>(25) 7.
 								Use the Snipping Tool to make a screen shot.<br />
-								Use the <span class="bg-info text-white">Yellow Highlighter Tool</span> and highlight the software listed above.
+								Use the </strong> <span class="bg-info text-white"><strong>Yellow Highlighter Tool</strong></span><strong> to highlight Visual Studio. </strong>
 							</p>
 							<p>
 								Save the screen shot  as &quot;Ex5&quot; in your ' <code><span id="dPath"></span></code>
@@ -801,8 +819,9 @@
 							In your Zoom account, click the 
                     &#39;Proflile&#39; on the left side and view your profile.<br />
 							Make the window big enough to view all the information.
-            <br />
-							Use the Snipping Tool to make a screen shot of your profile.<br />
+            <br /></p>
+						<p class="text-primary">
+							<strong>(25) 8. Use the Snipping Tool to make a screen shot of your profile.</strong><br />
 						</p>
 						<p>
 							Save the screen shot  as &quot;Ex6&quot; in your ' <code><span id="ePath"></span></code>
@@ -852,8 +871,8 @@
 
 						</ol>
 
-						<div class="col-lg-12 text-primary">
-							<p>(25) 9. After adjusting the D2L calendar for this course, take a screenshot of D2L showing the first few assignment due dates using the Snipping tool.</p>
+						<div >
+							<p class="text-primary"><strong>(25) 9. Take a screenshot of D2L showing the first few assignment due dates using the Snipping tool.</strong></p>
 							<p>
 								Save the screen shot  as &quot;Ex7&quot; in your ' <code><span id="fPath"></span></code>
 								<script>document.getElementById("fPath").innerHTML = Path; </script>
@@ -875,16 +894,7 @@
 
 					<div id="ExercisePDF2" class="collapse in  col-lg-12">
 						<p>
-							To proceed you must have Windows 10 installed, which includes &#39;Print to PDF&#39; ; or Adobe Acrobat Professional installed, which will appear as &quot;Adobe PDF &quot; in the Print Dialog Box.<br />
-							<a href="ssPrintToPDF.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('ssPrintToPDF.JPG', 'popup'); return false;">
-								<img alt="print to pdf" class="img-rounded img-responsive" src="ssPrintToPDF.JPG" title="print dialog box" width="300" /></a>
-							<span>Print dialog box</span>
-							<br />
-						</p>
-						<p>
-							
-							<br />
-							You will be creating one .pdf (portable document format) file from the screen shots that you have taken, and the pdfs that you have generated.
+							You will create one .pdf (portable document format) file from the three screen shots (Ex5, Ex6, Ex7).
 						</p>
 
 						<ol>
@@ -895,16 +905,21 @@
 							<li>Select all of the screen shots. </li>
 							<li>Right Click and select &#39;Print&#39; from the pop-up menu.</li>
 							<li>In the bottom center of the &#39;Print Pictures&#39; dialog box <strong>uncheck</strong> the box &quot;Fit picture to frame&quot;</li>
-							<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;Formative01_Part2.pdf&quot; in your ' <code><span id="rrPath"></span></code>
+							<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;Formative00_Part2.pdf&quot; in your ' <code><span id="rrPath"></span></code>
 								<script>document.getElementById("rrPath").innerHTML = Path; </script>
 								' folder.<br />
+							
+								<a href="PrintToPdf.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('PrintToPdf.PNG', 'popup'); return false;">
+									<img alt="Print to PDF" class="img-rounded img-responsive" src="PrintToPdf.PNG" width="300" /></a>
+								<br />
 							</li>
+							<li>You have created a PDF file that contains all 3 screen shots. It is viewable in your Chrome browser, or using Adbobe Acrobat Reader.  Do not worry about the order of the screen shots, nor the rotation.</li>
 
 						</ol>
 
 
 						<div class="col-lg-12 text-primary">
-							<p>(25) 10. Upload your file 'Formative00_Part2.pdf' to the D2L 'Formative00_Part2' Assignment folder.</p>
+							<p><strong>(25) 10. Upload your file 'Formative00_Part2.pdf' to the D2L 'Formative00_Part2' Assignment folder.</strong></p>
 
 						</div> 
 						<hr />
@@ -935,8 +950,7 @@
 						When these tasks are completed press the Submit button below.  This will send your information to Professor Paulson's website database server, otherwise known as your &#39;web db submission&#39;.
 
 						<hr />
-					</div>
-			
+					</div>			
 
 			</div>
 
@@ -957,22 +971,16 @@
 
 			<div id="Part3" class="col-lg-12 tab-pane fade">
 
-
-
 				<!-- Calculate the correct Path for saving the files -->
 				<!--	<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script> -->
 
 
-					<div class="col-lg-12 h3 text-danger">
-						140 Points
-						<hr />
-					</div>
+				<div class="row col-lg-12">
+								<div class="col-lg-4 h3 text-danger">175 points</div>
+								<div class="col-lg-4 h2 text-center">Part 3</div>
+								<div class="col-lg-1"></div>
+				</div>
 
-
-
-
-					<h1 class="col-lg-12 text-center">Part 3
-					</h1>
 
 
 					<div class="col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Exercise 7-VPN</a></div>
@@ -1032,9 +1040,11 @@
 						</ol>
 						<div class="col-lg-12 text-primary">
 							<p>
-								(10) 7. Make sure to print the Cisco VPN Statistics file as &#39;Ex7.pdf&#39;&#39; and save it in the folder ' <code><span id="gPath"></span></code>
+								<strong>(25) 11. Make sure to print the Cisco VPN Statistics file as &#39;Ex7.pdf&#39;&#39; and save it in the folder ' </strong> <code><span id="gPath"></span></code>
+								<strong>
 								<script>document.getElementById("gPath").innerHTML = Path; </script>
 								'
+                    </strong>
                     <br />
 							</p>
 						</div>
@@ -1054,8 +1064,8 @@
 					</div>
 
 
-					<div class="col-lg-12 text-primary">
-						<p>(10) 8. Using the Snipping tool take a screenshot of File Explorer showing your T: drive folder for this course, with the Cisco AnyConnect icon visible in the take tray.he Snipping tool.</p>
+					<div class="col-lg-12">
+						<p class="text-primary"><strong>(25) 12. Using the Snipping tool take a screenshot of File Explorer showing your T: drive folder for this course, with the Cisco AnyConnect icon visible in the task tray.</strong></p>
 						<p>
 							Save the screen shot  as &quot;Ex7&quot; in your ' <code><span id="qPath"></span></code>
 							<script>document.getElementById("qPath").innerHTML = Path; </script>
@@ -1114,8 +1124,8 @@
 						</p>
 					</div>
 
-					<div class="col-lg-12 text-primary">
-						<p>(10) 8. After subscriping to the New York Times, login and take a screenshot of the current edition's home page using the Snipping tool.</p>
+					<div class="col-lg-12">
+						<p class="text-primary"><strong>(25) 13. After subscriping to the New York Times, login and take a screenshot of the current edition's home page using the Snipping tool.</strong></p>
 						<p>
 							Save the screen shot  as &quot;Ex8&quot; in your ' <code><span id="hPath"></span></code>
 							<script>document.getElementById("hPath").innerHTML = Path; </script>
@@ -1156,8 +1166,8 @@
 						</p>
 					</div>
 
-					<div class="col-lg-12 text-primary">
-						<p>(10) 9. After subscribing to the Wall Street Journal, login and take a screenshot of the front page using the Snipping tool.</p>
+					<div class="col-lg-12">
+						<p class="text-primary"><strong>(25) 14. After subscribing to the Wall Street Journal, login and take a screenshot of the front page using the Snipping tool.</strong></p>
 						<p>
 							Save the screen shot  as &quot;Ex8WSJ&quot; in your ' <code><span id="jPath"></span></code>
 							<script>document.getElementById("jPath").innerHTML = Path; </script>
@@ -1188,8 +1198,8 @@
 
 					</div>
 
-					<div class="col-lg-12 text-primary">
-						<p>(10) 10. After accessing Flipster, open the latest issue of Wired magazine and take a screenshot of the cover using the Snipping tool.</p>
+					<div class="col-lg-12">
+						<p class="text-primary"><strong>(25) 15. After accessing Flipster, open the latest issue of Wired magazine and take a screenshot of the cover using the Snipping tool.</strong></p>
 						<p>
 							Save the screen shot  as &quot;Ex8Flip&quot; in your ' <code><span id="kPath"></span></code>
 							<script>document.getElementById("kPath").innerHTML = Path; </script>
@@ -1214,39 +1224,33 @@
 
 					<div id="ExercisePDF" class="collapse in  col-lg-12">
 						<p>
-							To proceed you must have Windows 10 installed, which includes &#39;Print to PDF&#39; ; or Adobe Acrobat Professional installed, which will appear as &quot;Adobe PDF &quot; in the Print Dialog Box.<br />
-							<a href="ssPrintToPDF.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('ssPrintToPDF.JPG', 'popup'); return false;">
-								<img alt="print to pdf" class="img-rounded img-responsive" src="ssPrintToPDF.JPG" title="print dialog box" width="300" /></a>
-							<span>Print dialog box</span>
-							<br />
-						</p>
-						<p>
-							Refer to this url and follow these steps.  <a href="https://www.howtogeek.com/248462/how-to-combine-images-into-one-pdf-file-in-windows/" target="_blank" class="bg-info text-white">https://www.howtogeek.com/248462/how-to-combine-images-into-one-pdf-file-in-windows/</a>
-							<br />
-							You will be creating one .pdf (portable document format) file from the screen shots that you have taken, and the pdfs that you have generated.
+							You will be creating one .pdf (portable document format) file from the screen shots that you have taken, and the pdf that you have printed from the VPN log file.
 						</p>
 
 						<ol>
-							<li>Open File Explorer, make sure the screen shot files are properly named(Ex0, Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+							<li>Open File Explorer, make sure the screen shot files are properly named(Ex7, Ex8NYT, Ex8WSJ , ExFlip)</li>
 							<li>Select all of the screen shots to be combined. </li>
 							<li>Right Click and select &#39;Print&#39; from the pop-up menu.</li>
 							<li>In the bottom center of the &#39;Print Pictures&#39; dialog box <strong>uncheck</strong> the box &quot;Fit picture to frame&quot;</li>
 							<li>See the howtogeek article for more options.</li>
 							<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your ' <code><span id="lPath"></span></code>
 								<script>document.getElementById("lPath").innerHTML = Path; </script>
-								' folder.<br />
-
+								' folder.<br />							
+								<a href="PrintToPdf.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('PrintToPdf.PNG', 'popup'); return false;">
+									<img alt="Print to PDF" class="img-rounded img-responsive" src="PrintToPdf.PNG" width="300" /></a>
+								<br />
 							</li>
-							<li>Use PDFill (installed in <a href="#Exercise04">Exercise 4</a>) to merge the ScreenShots.pdf file with the Ex7.pdf file created in Exercise 7, and save it as &#39;Formative00.pdf&#39; in your ' <code><span id="mPath"></span></code>
+							<li>You have created a PDF file that contains all 4 screen shots. It is viewable in your Chrome browser, or using Adbobe Acrobat Reader.  Do not worry about the order of the screen shots, nor the rotation.</li>
+
+
+							<li>Use PDFill (installed in <a href="#Exercise04">Exercise 4</a>) to merge the ScreenShots.pdf file with the Ex7.pdf file created in Exercise 7, and save it as &#39;Formative00_Part3.pdf&#39; in your ' <code><span id="mPath"></span></code>
 								<script>document.getElementById("mPath").innerHTML = Path; </script>
 								' folder.<br />
-								<br />
-								<br />
 							</li>
 						</ol>
 
-						<div class="col-lg-12 text-primary">
-							<p>(10) 11. Upload your file 'Formative00.pdf' to the D2L 'Formative00' Assignment folder.</p>
+						<div class="col-lg-12 ">
+							<p class="text-primary"><strong>(25) 16. Upload your file 'Formative00_Part3.pdf' to the D2L 'Formative00_Part3' Assignment folder.</strong></p>
 
 						</div> 
 						<hr />
@@ -1259,28 +1263,33 @@
 					<div id="Exercise09" class="collapse in  col-lg-12">
 						<p>
 							Composing and sending clear, professional emails is an important skill to learn and master for your career.<br />
-							Google 'composing effective emails' and read some of the tips provided, <a href="https://jerz.setonhill.edu/writing/e-text/email/" target="_blank" class="bg-info text-white">such as these 10 tips </a>found at the Seton Hill website.
-                <br />
+							Google 'composing effective emails' and read some of the tips provided, <a href="https://jerz.setonhill.edu/writing/e-text/email/" target="_blank" class="bg-info text-white">such as these 10 tips </a>found at the Seton Hill website.<br />
 							Then check your Outlook Email account to confirm that you have received a copy of this email.<br />
 							If you did not receive a confirming email, something is wrong, and you need to troubleshoot and resolve the problem.<br />
 							Explain to the student the need to press Submit and check that they received an email.<br />
 							Also that they need to upload any required files to the D2L Assignment Folder.
 						</p>
-						<div class="col-lg-12 text-primary">
+
+						<div >
 							<!-- PgP toDo create js to replace (course) with the course entered into input box at top of page, then can remove subject line screen shot below -->
-							<p>
-								(10) 12. To complete this Exercise <a href="mailto:ppaulson@winona.edu?subject=(course)AssignmentFormative00&amp;body=I%20have%20completd%20AssignmentFormative00%20and%20I%20learnt%20a%20lot." class="bg-info text-white">click this link  </a>&nbsp; and send a professional email to Professor Paulson stating that you have completed Exercise 9 of Assignment Formative00.&nbsp;<br />
-								Replace (course) in the subject line with the class you are in: BUSA353, MIS342, MIS362, MIS452.&nbsp; Do not have any spaces in your subject line.<br />
-								The subject line must look something like this:<br />
+							<p class="text-primary">
+								<strong>(25) 17. To complete this Exercise </strong> <a href="mailto:ppaulson@winona.edu?subject=(course)AssignmentFormative00&amp;body=I%20have%20completd%20AssignmentFormative00%20and%20I%20learnt%20a%20lot." class="bg-info text-white"><strong>click this link  </strong>  </a><strong>&nbsp; and send a professional email to Professor Paulson stating that you have completed Exercise 9 of Assignment Formative00.&nbsp;<br />
+								Replace (course) in the subject line with the class you are in: BUSA353, MIS342, MIS362, MIS452.&nbsp; Do not have any spaces in your subject line.</strong><br />
 							</p>
-							<div>
-								<img alt="email subject line" class="img-rounded img-responsive" src="ssEmailSubjectLine.JPG" />
-							</div>
+							<p> Your email subject line MUST be:<br />
+							</p>
+
+							<p><code class="h3"><span id="subjectLine"></span></code>
+								<script>document.getElementById("subjectLine").innerHTML = xClass + "AssignmentFormative00";</script>
+
+							</p>
+
+							<p>Make sure to:</p>
 
 							<ol>
 								<li>Add your email address to the cc: field </li>
 								<li>Use the skills you learned to edit the email and ensure it has a professional tone.</li>
-								<li>Proofread the email, checking grammar and typographics.</li>
+								<li>Proofread the email, check your grammar and correct typographic errors.</li>
 							</ol>
 						</div>
 						<hr />
