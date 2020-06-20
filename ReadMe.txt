@@ -1,3 +1,16 @@
+PgP 6/13/2020
+taking this Formative00 and moving it to GitHub/eProf1
+because this will become a standalone assignment
+used in all face to face classes-
+going to modify based on lessons learned in spring and summer 2020.
+PgP 6/13/2020-also, use modified Formative00 which now has 3 parts.  Think about re-arranging parts for online students.
+
+PgP 4/20/2020
+constants.js and Formative00
+
+for fall 2020, students will begin on first day with Formative00 folder already uploaded to their T: drive, along with constants.js
+They will have to go into constants.js and put in their first name, last name, starid.
+They then go to D2l and click on 'my websites' and navigate to Formative00.html, and start working on it-most importantly to retrieve and submit their Vs2019 enterprise Product key, so that we have it in case VS/Azure Dev Tools goes berserk again.
 
 
 
