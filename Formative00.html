@@ -38,6 +38,8 @@
 
 <body onload="setVariables()">
 
+	<h1>only for ftf classes building websites</h1>
+
 	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
 		<input name="InstID" id="InstID" value="00617282" type="hidden" />
 		<!-- had to put assignment here, because it is used in the path calculation -->
@@ -303,14 +305,11 @@
 						</p>
 					<p>
 						Use Windows &#39;File Explorer&#39; to create a specific folder structure under OneDrive - MNSCU<br />
-						First you will create a folder with this course name.<br /><br />
-						Then within this folder create three subfolders- one for this assigment, Formative00<br />
-						the next named &#39;ReadOnly&#39;, which contains files for the local website you will be creating in Project01, and <br />
-						the third named &#39;Website&#39;, which will contain the local copy of your website/Git repository you will be creating in Project01.
+						Create a folder with this course name.<br /><br />
 						</p>
 
 					<p>
-						The first will have the path: '
+						The path will be: '
 						<code><span id="zzPath"></span></code>
 						<script>document.getElementById("zzPath").innerHTML = Path;</script>
 						'
@@ -329,47 +328,13 @@
 
 					</p>
 
-					<p>
-						The second folder is located at: 
-						</p>
-
-
-						
-					<p>
-						<code>\OneDrive - MNSCU\<span id="class3"></span>\Website</code>
-						<script>document.getElementById("class3").innerHTML=xClass  </script>
-					</p>
-
-					<p>
-						This is where you will create a local Git repository for the website that you will be creating in Project01.<br />
-						This folder already contains your website HomePage.html file, this assignment-Formative00, and a constants.js file into which you will enter your name and StarID to personalize your website.
-					</p>
-
-
-					<p>
-						The third folder is named &#39;ReadOnly&#39;
-					</p>
-
-					<p>
-						<code>\OneDrive - MNSCU\<span id="class4"></span>\ReadOnly</code>
-						<script>document.getElementById("class4").innerHTML = xClass  </script>
-					</p>
-
 
 
 					<div class="text-primary">
 						<p>
-							<strong>(50) 1. Use the Snipping Tool to make a screen shot of  File Explorer, showing this course folder containing the Formative00, ReadOnly and Website folders that you just created for this course.</strong><br />
+							<strong>(50) 1. Use the Snipping Tool to make a screen shot of  File Explorer, showing this course folder containing the Formative00 folder that you just created for this course.</strong><br />
 							&nbsp;
 							
-						<a href="Images/CourseFolders.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/CourseFolders.PNG', 'popup'); return false;">
-							<img src="Images/CourseFolders.PNG" width="300" alt="course folder structure" class="img-responsive img-responsive" /></a><br />
-							<br />
-
-							<!--  PgP 2/4/2018 create path using constants and current document assignment -->
-							Save the screen shot  as &quot;Ex1&quot; in your ' <code><span id="abPath"></span></code>
-							<script>document.getElementById("abPath").innerHTML = Path; </script>
-							' folder.
 							<br />
 
 							It can be a .jpg, .png or other appropriate image file format.<br />
