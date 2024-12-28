@@ -1,3 +1,8 @@
+PgP 11/21/2024
+need to add checks to Part2, Ex5, make sure Python interpreter shows up in tool bar(File>NewProject>PythonApplication)
+need to add note at end of Part 3, how to remove software once class is over (do last day of class?)
+added T: drive mapping to Part 1, Ex2 
+
 PgP 6/13/2020
 taking this Formative00 and moving it to GitHub/eProf1
 because this will become a standalone assignment
