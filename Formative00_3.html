@@ -1,0 +1,612 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--
+        PgP 5/28/2025 update to html and javascript to coincide with best coding practices
+		PgP 7/17/2020  Final version, with all updates for fall 2020
+		-->
+
+    <!-- With this version going to put the firstname, lastname... on the first page.
+		This will allow student to see assignment with blank fields.  Then when they get to Part 2 and do Exercise 1, put in
+		-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>Formative00Part3</title>
+
+
+
+</head>
+
+
+
+<body onload="initializePage()">
+
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/Process_AI_FormData_Updated.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+
+        <hr />
+
+
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly" />
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Formative00_3" type="text" readonly="readonly" />
+            </div>
+
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+
+
+        <h1 class=" text-center">Basic Digital Technologies-Part 3</h1>
+
+        <hr />
+
+
+        <div class="row col-lg-12">
+            <div class="col-lg-4 h3 text-danger">225 points</div>
+            <div class="col-lg-1"></div>
+        </div>
+
+
+        <div id="Objectives" class="col-lg-12 tab-pane fade in active">
+            <h2 class="text-center">Learning Objectives </h2>
+
+            <p>
+                This assignment introduces skills needed for this course, and begins development of <strong>a digital technology toolkit that will serve you well in your career. </strong>
+            </p>
+            <p>After completing this assignment you will be able to:</p>
+
+            <ol>
+                <li>Connect to a university VPN using Cisco AnyConnect and capture network connection details</li>
+                <li>Perform and document a hardware diagnostic test using HP PC Hardware Diagnostics </li>
+                <li>Access and subscribe to professional digital publications:
+                   <ul>
+                       <li>The New York Times</li>
+                       <li>The Wall Street Journal </li>
+                       <li>Flipster magazines (e.g., Wired, Entrepreneur)  </li>
+
+                   </ul>
+                    <li>Capture and organize publication screenshots using the Snipping Tool and OneNote </li>
+                <li>Compose and send a clear, professional email using Outlook </li>
+                <li>Create a single PDF containing all required evidence and submit it to D2L </li>
+                <li>Reflect on the skills gained by completing technical and professional preparation exercises</li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF1" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+        <div id="ExercisePDF2" class="collapse in  col-lg-12">
+            <p>
+                You will create one PDF file that contains screenshots documenting the work completed in this assignment.
+                        <br />
+                This PDF will be uploaded to the D2L Assignment folder titled <strong>'Formative00_Part3'</strong>.
+            </p>
+
+            <p>
+                Make sure you have Windows 11 installed, and you have the option &#39;Microsoft Print to PDF&#39; in the Print Dialog Box.<br />
+                If not, contact a TA or the professor.<br />
+                <a href="Images/ssPrintToPDF.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssPrintToPDF.JPG', 'popup'); return false;">
+                    <img alt="print to pdf" class="img-rounded img-responsive" src="Images/ssPrintToPDF.JPG" title="print dialog box" width="300" /></a>
+                <span>Print dialog box</span>
+                <br />
+            </p>
+
+            <hr>
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Formative00_Part3</code>.</li>
+                <li>Save this <code>Formative00_Part3.pdf</code> file into your ' <code><span id="Path1"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot (Ex9, Ex10NYT, Ex10WSJ, Ex10Flip).</li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT – New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the D2L Assignment folder: <strong>'Formative00_Part3'</strong>.</li>
+            </ol>
+            <hr>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="Part3" class="col-lg-12 ">
+
+
+
+
+
+            <div class="col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Exercise 8-VPN</a></div>
+            <div id="Exercise08" class="collapse in  col-lg-12">
+                <p>
+                    There are two ways to do this:&nbsp;
+                </p>
+                <p>
+                    while you are off-campus, or<br />
+                    in Somsen 301, station 17, using the USB-C dock with the network patch cable designated &#39;HBC VPN&#39;
+                </p>
+
+                <p>
+                    If your laptop is wired to the WSU network or connected to the WSU wireless network (Warrior or Wazoo) you must first disconnect, otherwise your computer will not be able to connect to the WSU VPN.<br />
+                    First read (and later refer to) these instructions on connecting to the WSU VPN: <a href="https://learn.winona.edu/wiki/VPN" target="_blank" class="bg-info text-white">https://learn.winona.edu/wiki/VPN</a><br />
+                    Note:  For additional assistance, and if the above hyperlink does not work, search the WSU website for &quot;Cisco VPN&quot; 
+                </p>
+
+                <p>The following instructions are for use when in Somsen 301.</p>
+                <ol>
+                    <li>Turn off your Wi-Fi on your laptop.</li>
+                    <li>Connect to the HBC VPN USB Type-C 3.1 cable that attaches to the HP dock<br />
+                        <div>
+                            <a href="Images/ssVpn.jpg" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssVPN.JPG', 'popup'); return false;">
+                                <img src="Images/ssVpn.jpg" alt="USB Type-C dock" class="img-rounded img-responsive" width="300" /></a>
+                        </div>
+                    </li>
+                    <li>Wait a few seconds, do a Google search to check your IP address.<br />
+                        <div>
+                            <a href="Images/ssWhatsMyIP.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssWhatsMyIP.JPG', 'popup'); return false;">
+                                <img src="Images/ssWhatsMyIP.JPG" alt="check IP" class="img-rounded img-responsive" width="300" />
+                            </a>
+                        </div>
+                    </li>
+                    <li>Click the Windows button, type &quot;Cisco AnyConnect&quot; and press enter to bring up the login dialog box.<br />
+                        Note-as of October 2023 make sure 'wsutunnel.winona.edu' appears
+                    </li>
+                    <li>Click the &#39;Connect&#39; button, if the Username box appears enter your StarID, enter your WSU network password; but make sure to click &#39;OK&#39;:&nbsp;
+                    <br />
+                        <a href="Images/ssVpn01A.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssVPN01A.PNG', 'popup'); return false;">
+                            <img alt="VPN login" class="img-rounded img-responsive" src="Images/ssVpn01A.PNG" width="300" /><br />
+                        </a>
+                        <br />
+
+
+                    </li>
+
+                    <li>The first time you connect to &#39;wsutunnel&#39; software is downloaded which will require you to restart your computer before continuing.
+                    </li>
+
+                    <li>After a few seconds the dialog box will minimize and an icon will appear in the Task Tray.&nbsp;
+                <br />
+                        <img src="Images/ssVPN02.JPG" alt="dialog box" class="img-rounded img-responsive" width="100" />
+                        <br />
+                        Double click it to open the dialog box. Then click the &#39;gear&#39; in the lower left to show the Statistics.&nbsp;<br />
+
+                        <a href="Images/ssVPN03A.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssVPN03A.PNG', 'popup'); return false;">
+                            <img src="Images/ssVPN03A.PNG" alt="export stats" class="img-rounded img-responsive" width="300" /><br />
+                        </a>
+
+                    </li>
+
+                    <li>Click the &#39;Export Stats...&#39; button, save the file &#39;test.txt&#39; in the folder ' <code><span id="Path2"></span></code>
+                    </li>
+                    <li>Open test.txt and print it as a pdf file named Ex8.pdf<br />
+                        It will look like this:
+                    <br />
+                        <a href="Images/ssVPN04.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssVPN04.JPG', 'popup'); return false;">
+                            <img src="Images/ssVPN04.JPG" alt="vpn stats" class="img-rounded img-responsive" width="300" /><br />
+                        </a>
+                        &nbsp;</li>
+                    <li>When done, make sure to turn your computer WiFi on again.
+                    </li>
+                </ol>
+                <div class="col-lg-12 text-primary">
+                    <p>
+                        <strong>(50) 1. Make sure to print the Cisco VPN Statistics file as &#39;Ex8.pdf&#39;&#39; and place a copy in the OneNote file in the folder ' </strong><code><span id="Path3"></span></code>
+                        <strong>'
+                        </strong>
+                        <br />
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-12 text-danger">
+                <h2>Print PDF file Ex8</h2>
+                <hr />
+            </div>
+
+
+
+
+
+
+
+
+            <div class="col-lg-12"><a href="#Exercise09" class="btn btn-info" data-toggle="collapse">Exercise 9-PC Hardware Check</a></div>
+
+            <div id="Exercise09" class="collapse in  col-lg-12">
+                <p>
+                    To succeed in this course, and in your career, it is essential that your computer (hardware and software) is functioning correctly.  
+						<br />
+                    In this exercise you will perform a hardware check.  At the end of Formative00, Part 3 you are advised to update your software.<br />
+                    Before you perform a hardware check, make sure to connect your laptop to a power supply and restart it, applying any updates.<br />
+                </p>
+                <ol>
+                    <li>After your computer has restarted, click Start, type in <code>HP PC Hardware</code><br />
+                        Note: if not found, or to install latest version, click Start, type in &quot;hp pc hardware diagnostics&quot; and click &#39;Get&#39; to install.<a href="https://www8.hp.com/us/en/campaigns/hpsupportassistant/pc-diags.html" target="_blank" class="bg-info text-white"> </a>
+                        <br />
+
+                        <a href="Images/HpHWDiag.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/HpHWDiag.PNG', 'popup'); return false;">
+                            <img src="Images/HpHWDiag.PNG" class="img-responsive img-rounded" alt="HP PC diagnostics" width="300" /></a>
+                        <span class="text-center">HP PC Hardware in Microsoft Store</span><br />
+
+                    </li>
+                    <li>Press Enter
+                    </li>
+                    <li>Select 'System Tests', 'System Fast Test', then click 'Run Once'
+                    </li>
+                    <li>A series of tests will check your hardware performance.<br />
+                        <span class="alert-danger">If any test fails, go to tech support in Somsen 207 for assistance in resolving the problem.</span>
+                    </li>
+                </ol>
+
+                <p>
+                    <a href="Images/HPDiag_1_5_8.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/HPDiag_1_5_8.PNG', 'popup'); return false;">
+                        <img src="Images/HPDiag_1_5_8.PNG" class="img-responsive img-rounded" alt="HP PC diagnostics" width="300" /></a>
+                    <span class="text-center">HP PC Hardware application interface</span><br />
+                </p>
+
+                <p>
+                    Note- other in-depth testing and computer information is available using the <a href="Images/HPSupportAssistant.PNG" target="_blank" class="bg-info text-white">HP Support Assistant</a>.
+                </p>
+                <p>
+                    Do not forget to check <a href="Images/SoftwareCenter.PNG" target="_blank" class="bg-info text-white">Software Center </a>(Start, type &#39;Software Center&#39;) for the latest Windows and other updates.
+                </p>
+
+                <div class="text-primary">
+                    <p>
+                        <strong>(25) 2. Use the Snipping Tool to make a screenshot of  the 'HP PC Hardware Diagnostics Window' showing that your laptop 'Passed' ALL tests.
+                        </strong>
+                        <br />
+
+                        <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                        Save the screenshot  as &quot;Ex9&quot;and place a copy in the OneNote file in your '<code> <span id="Path4"></span></code>
+                        ' folder. 
+                    <br />
+
+                        It can be either a .jpg or .png file.
+                    <br />
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-12 text-danger">
+                <h2>Screenshot Ex9</h2>
+                <hr />
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="col-lg-12"><a href="#Exercise10" class="btn btn-info" data-toggle="collapse">Exercise 10-Publications</a></div>
+            <div id="Exercise10" class="collapse in  col-lg-12">
+
+                <p>Publications:</p>
+                <p>
+                    To keep informed, you are strongly encouraged to read the many magazines available to you at no charge through Flipster.
+                <br />
+                    Through the Krueger Library, you have access to online versions of <i>The</i> <i>New York Times, The Wall Street Journal</i>, and <i>Flipster</i> magazines.
+                </p>
+                <p>
+                    Instructions are below. &nbsp;If you have questions, please contact the Krueger Library.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    <b><i>New York Times</i>:</b>
+                </p>
+                <p>
+                    1) Click on this link: <a href="https://libguides.winona.edu/az.php?a=n" target="_blank" class="bg-info text-white">https://libguides.winona.edu/az.php?a=n</a>
+                </p>
+                <p>
+                    2) 
+                		From the list choose &nbsp; “New York Times (Institutional Subscription)”
+                </p>
+                <p>
+                    3) For your username, use your <code>StarID@winona.edu</code>. Then choose a password and indicate that you are “Student”. Choose your graduation year.
+                </p>
+                <p>
+                    4) You may also have access to the NYT app through <a href="https://learn.winona.edu/wiki/WSU_Apps" target="_blank" class="bg-info text-white">WSU Apps</a>.
+                </p>
+                <p>
+                    <b>*To subscribe, you must sign up on campus.*</b>
+                </p>
+            </div>
+
+            <div class="col-lg-12">
+                <p class="text-primary"><strong>(25) 3. After subscriping to the New York Times, login and take a screenshot of the current edition's home page using the Snipping tool.</strong></p>
+                <p>
+                    Save the screenshot  as &quot;Ex10&quot; in the OneNote file in your ' <code><span id="Path5"></span></code>
+                    ' folder.<br />
+                </p>
+            </div>
+
+
+            <div class="col-lg-12 text-danger">
+                <h2>Screenshot Ex10NYT</h2>
+                <hr />
+            </div>
+
+            <div class="col-lg-12">
+                <p>
+                    <b><i>Wall Street Journal</i></b>
+                </p>
+                <p>
+                    1) Click on this link: <a href="https://libguides.winona.edu/az.php?a=w" target="_blank" class="bg-info text-white">Wall Street Journal </a>and search for 'Wall Street Journal', follow the instructions.
+                </p>
+                <p>
+                    2) Enter your StarID and the password associated with your StarID
+                </p>
+                <p>
+                    3) Follow the instructions and fill out the subscription form
+                </p>
+                <p>
+                    4) Users with an existing account have the option to connect to the institutional subscription at the bottom of the “Create Account” page.
+                </p>
+                <p>
+                    5) Repeat these steps every 180 days.
+                </p>
+                <p>
+                    You may also have access to the WSJ app through <a href="https://learn.winona.edu/wiki/WSU_Apps" target="_blank" class="bg-info text-white">WSU Apps</a>.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+            </div>
+
+            <div class="col-lg-12">
+                <p class="text-primary"><strong>(25) 4. After subscribing to the Wall Street Journal, login and take a screenshot of the front page using the Snipping tool.</strong></p>
+                <p>
+                    Save the screenshot  as &quot;Ex10WSJ&quot; and place a copy in your OneNote file in your ' <code><span id="Path6"></span></code>
+                    ' folder.<br />
+                </p>
+            </div>
+
+
+            <div class="col-lg-12 text-danger">
+                <h2>Screenshot Ex10WSJ</h2>
+                <hr />
+            </div>
+
+
+            <div class="col-lg-12">
+
+                <p>
+                    The Krueger Library now has access to many popular titles (Business Week, Fast Company, Time, Newsweek, Entrepreneur and many more) on your laptop or iPad!&nbsp; To learn how to access these, please consult this library guide.
+                <br />
+                    <a href="https://libguides.winona.edu/c.php?g=611626&amp;p=4247234" target="_blank" class="bg-info text-white">https://libguides.winona.edu/c.php?g=611626&amp;p=4247234</a>
+                </p>
+
+                <p>
+
+                    <a href="Images/Flipster.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/Flipster.png', 'popup'); return false;">
+                        <img class="img-responsive" alt="flipster" src="Images/Flipster.PNG" width="300" /></a>
+                </p>
+
+            </div>
+
+            <div class="col-lg-12">
+                <p class="text-primary"><strong>(25) 5. After accessing Flipster, open the latest issue of Wired magazine and take a screenshot of the cover using the Snipping tool.</strong></p>
+                <p>
+                    Save the screenshot  as &quot;Ex10Flip&quot; and place a copy in your OneNote file in your ' <code><span id="Path7"></span></code>
+                    ' folder.<br />
+                </p>
+            </div>
+
+
+            <div class="col-lg-12 text-danger">
+                <h2>Screenshot Ex10Flip</h2>
+                <hr />
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="col-lg-12"><a href="#Exercise11" class="btn btn-info" data-toggle="collapse">Exercise 11-Composing Professional Emails</a></div>
+
+            <div id="Exercise11" class="collapse in  col-lg-12">
+                <p>
+                    Composing and sending clear, professional emails is an important skill to learn and master for your career.<br />
+                    Google 'composing effective emails' and read some of the tips provided, <a href="https://jerz.setonhill.edu/writing/e-text/email/" target="_blank" class="bg-info text-white">such as these 10 tips </a>found at the Seton Hill website.<br />
+                </p>
+
+                <div>
+                    <!-- PgP toDo create js to replace (course) with the course entered into input box at top of page, then can remove subject line screenshot below -->
+
+                    For this Exercise	
+
+						<div id="testEmail"></div>
+                    <script>document.getElementById("testEmail").innerHTML = '<a href="mailto:' + xStarID + '@go.minnstate.edu' + '?subject=' + xClass + '-' + xSection + 'AssignmentFormative00&amp;cc=ppaulson@winona.edu&amp;body=I%20done%20completd%20AssignmentFormative00%20and%20I%20learnt%20a%20lot." class="bg-info text-white"  >' + 'click this link' + '</a>'</script>
+                    <p>
+                        and send a professional email to Professor Paulson stating that you have completed Exercise 11 of Assignment Formative00.&nbsp;<br />
+                    </p>
+
+                    <p>
+                        <a href="Images/ProfessionalEmail.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ProfessionalEmail.PNG', 'popup'); return false;">
+                            <img alt="Professional email" class="img-rounded img-responsive" src="Images/ProfessionalEmail.PNG" width="300" /></a>
+                    </p>
+
+
+
+                    <p>Make sure to:</p>
+
+                    <ol>
+                        <li>Use the skills you learned to edit the email.</li>
+                        <li>Ensure the email has a professional tone.</li>
+                        <li>Proofread the email, check your grammar and correct any typographic errors.</li>
+                        <li><strong>Do not change the email subject line!</strong><br />
+                        </li>
+                    </ol>
+
+                    <p class="text-primary">
+                        <strong>(25) 6. When your email is ready, click the Send button.</strong>
+                    </p>
+
+
+
+                    <p>
+                        After sending the email check your Outlook account to confirm that you have received a copy of this email.<br />
+                        If you did not receive a confirming email, something is wrong, and you need to troubleshoot and resolve the problem.<br />
+                    </p>
+                </div>
+                <hr />
+
+            </div>
+
+
+
+            <div class="col-lg-12"><a href="#Exercise12" class="btn btn-info" data-toggle="collapse">Exercise 12-Reflection and Web Database Submission</a></div>
+
+            <div id="Exercise12" class="collapse in  col-lg-12">
+
+                <div class="row col-lg-12">
+                    <strong>(50) Question 1. Final Reflection: What was the most useful thing you learned while completing this assignment?</strong><br>
+                    <textarea id="q1" name="q1" rows="4" maxlength="1000"
+                        placeholder="Write a brief reflection here..." cols="100"></textarea>
+                    <br>
+                    <small class="form-text text-muted">Tip: You can mention a technical skill you practiced, a tool you explored, or a challenge you overcame.
+                    </small>
+                    <hr />
+                </div>
+
+
+
+            </div>
+
+            <div class="col-lg-12">
+                <hr />
+                <input class="text-danger btn-block btn-lg" name="Submit" value="SUBMIT" type="submit" />
+                <br />
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+    </form>
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="xLicense" class="col-lg-12 text-muted"></div>
+        <div id="xfooter" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- JS dependencies -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <!-- Load constants FIRST -->
+    <script src="../constants.js"></script>
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <script>
+        // Initialization logic: all DOM updates happen here.
+        function initializePage() {
+            // Set variables from constants.js and CourseConstants.js
+            setVariables();
+
+            // Get assignment value
+            var assignmentInput = document.getElementById("assignment");
+            var assignmentValue = assignmentInput ? assignmentInput.value : "Formative00_1";
+            var Path = "\\OneDrive - MNSCU\\" + (typeof xClass !== "undefined" ? xClass : "") + "\\" + assignmentValue + "\\";
+
+            // Fill all DOM elements that need the Path
+            var idsToUpdate = ["Path1", "Path2", "Path3", "Path4", "Path5", "Path6", "Path7", "Path8"];
+            idsToUpdate.forEach(function (id) {
+                var el = document.getElementById(id);
+                if (el) el.innerHTML = Path;
+            });
+
+            // Footer and license info
+            if (document.getElementById("xLicense"))
+                document.getElementById("xLicense").innerHTML = typeof ccLicense !== "undefined" ? ccLicense : "";
+            if (document.getElementById("xfooter"))
+                document.getElementById("xfooter").innerHTML = new Date().toLocaleString();
+        }
+    </script>
+
+</body>
+</html>

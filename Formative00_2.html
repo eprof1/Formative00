@@ -1,0 +1,738 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--
+        PgP 5/28/2025 update to html and javascript to coincide with best coding practices
+		PgP 7/17/2020  Final version, with all updates for fall 2020
+		-->
+
+    <!-- With this version going to put the firstname, lastname... on the first page.
+		This will allow student to see assignment with blank fields.  Then when they get to Part 2 and do Exercise 1, put in
+		-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>Formative00Part2</title>
+
+
+</head>
+
+
+
+<body onload="initializePage()">
+
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+
+
+        <hr />
+
+
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly" />
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Formative00_2" type="text" readonly="readonly" />
+            </div>
+
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- calculate the path based on the assignment -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+
+
+
+        <h1 class=" text-center">Basic Digital Technologies-Part 2</h1>
+
+        <hr />
+
+        <div class="col-lg-4 h3 text-danger">200 points</div>
+
+        <div id="Objectives" class="col-lg-12 ">
+            <h2 class="text-center">Learning Objectives </h2>
+
+            <p>
+                This assignment introduces 
+                    skills needed for this course, and begins development of <strong>a digital technology toolkit that will serve you well in your career. </strong>
+            </p>
+            <p>After completing this assignment you will be able to:</p>
+
+            <ol>
+                <li>Install and activate Visual Studio Enterprise 2022, including required modules for ASP.NET and Python development </li>
+                <li>Configure Visual Studio settings for optimized use in this course </li>
+                <li>Create a GitHub account and verify access via screenshot </li>
+                <li>Install and verify Git for Windows, and understand its purpose in version control </li>
+                <li>Authenticate into Zoom, configure settings, and verify your profile and meeting environment </li>
+                <li>Subscribe to the D2L course calendar feed and integrate it into the Outlook desktop client </li>
+                <li>Capture, organize, and label multiple screenshots in OneNote</li>
+                <li>Export your screenshots as a PDF file using Print to PDF, and submit the result to D2L </li>
+                <li>Maintain accurate file naming and folder structure within your OneDrive-backed course directory </li>
+                <li>Understand the importance of software setup and personal digital workspace configuration as part of long-term academic and professional success </li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+
+
+
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF1" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+        <div id="ExercisePDF2" class="collapse in  col-lg-12">
+            <p>
+                You will create one PDF file that contains screenshots documenting the work completed in this assignment.
+                        <br />
+                This PDF will be uploaded to the D2L Assignment folder titled <strong>'Formative00_Part2'</strong>.
+            </p>
+
+            <p>
+                Make sure you have Windows 11 installed, and you have the option &#39;Microsoft Print to PDF&#39; in the Print Dialog Box.<br />
+                If not, contact a TA or the professor.<br />
+                <a href="Images/ssPrintToPDF.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssPrintToPDF.JPG', 'popup'); return false;">
+                    <img alt="print to pdf" class="img-rounded img-responsive" src="Images/ssPrintToPDF.JPG" title="print dialog box" width="300" /></a>
+                <span>Print dialog box</span>
+                <br />
+            </p>
+
+            <hr>
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Formative00_Part2</code>.</li>
+                <li>Save this <code>Formative00_Part2.pdf</code> file into your ' <code><span id="Path1"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot (Ex5A, Ex5B, Ex5C, Ex6, Ex7).</li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex5A – Visual Studio Product Key").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the D2L Assignment folder: <strong>'Formative00_Part2'</strong>.</li>
+            </ol>
+            <hr>
+        </div>
+
+
+
+
+
+
+
+        <div id="Part2" class="col-lg-12 ">
+
+
+
+            <!-- Calculate the correct Path for saving the files -->
+            <!--	<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>  -->
+
+
+
+            <div class="row col-lg-12">
+                <div class="col-lg-1"></div>
+            </div>
+
+
+            <hr />
+
+
+
+
+            <div class="col-lg-12">
+                <h3>In this exercise you install software on your computer.<br />
+                    This is different than installing software on your phone, as it involves two processes-downloading (retrieving the necessary files) and installation (running a program that asks you to choose certain program settings).
+                </h3>
+                <hr />
+            </div>
+
+
+
+            <div class="col-lg-12"><a href="#Exercise99" class="btn btn-info" data-toggle="collapse">Exercise 5-Software Installation-Visual Studio, GitHub</a>  </div>
+            <hr />
+
+            <div id="Exercise99" class="collapse in  col-lg-12">
+                <p>
+                    Download and install Visual Studio Enterprise 2022 to create and maintain a website, which is how you will complete course assignments.<br />
+                    Create a GitHub account which is used to obtain assignments and learn about version control.<br />
+                    Version control allows many programmers to collaborate on software development without needing to be co-located.  It also allows a disciplined methodology to control this software.
+                </p>
+
+                <ol>
+                    <li>Get Visual Studio Enterprise, 64-bit, 2022 or later, from-<a class="bg-info text-white" href="https://aka.ms/devtoolsforteaching" target="_blank">Azure Dev Tools</a><br />
+                        Username is: <code>StarID@go.minnstate.edu</code>
+                    </li>
+
+                    <li>As Visual Studio downloads, retrieve and save your Product Key from the Azure Dev Tools website.</li>
+
+                    <li>Use NotePad and create a file named 'ProductKey.txt'</li>
+
+                    <li>Paste your Visual Studio Product Key into this file</li>
+
+                </ol>
+
+                <p class="text-primary">
+                    <strong>(25) 1.  Save this file as "ProductKey.txt" in your ' 
+							<code><span id="Path2"></span></code>
+                        ' folder. Place a copy in your OneNote file.<br />
+                    </strong>
+
+
+                </p>
+
+
+                <hr />
+
+                <p>Install Visual Studio</p>
+
+                <ol>
+
+                    <li>Please install the ASP.NET and web development, and the Python development modules.<br />
+                        If you forget to install these modules, you can choose Tools&gt;Get Tools and Features...<br />
+                        The software is available at no charge to you.<br />
+                        The installation requires about 8GB of disk space.<br />
+
+                        <a href="Images/VS2022_Install.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/VS2022_Install.PNG', 'popup'); return false;">
+                            <img alt="VS Install" class="img-rounded img-responsive" src="Images/VS2022_Install.PNG" width="300" /></a>
+                        <br />
+                    </li>
+
+                    <li>If you are using VS 2022 or later you can skip this step, as the extension is already installed.<br />
+                        If you are still using VS2019 or earlier, you must install the Visual Studio GitHub Extension<br />
+                        From the menu select Extensions&gt;Manage Extensions and search for &#39;GitHub Extension&#39;.
+                            <br />
+
+                        <a href="Images/ssGitHubExt.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssGitHubExt.PNG', 'popup'); return false;">
+                            <img src="Images/ssGitHubExt.PNG" class="img-rounded img-responsive" alt="Git Hub Extenstion" width="300" /><br />
+                        </a>
+                    </li>
+
+                    <li>Visual Studio Settings
+                            <br />
+
+                        Open Visual Studio. 
+                            <br />
+                        Under Tools&gt;Options change the following settings are optimized for this class.<br />
+                        &gt;Text Editor&gt;All Languages; check 'Line numbers'<br />
+
+                        <a href="Images/ToolsOptionsLineNumbers.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ToolsOptionsLineNumbers.PNG', 'popup'); return false;">
+                            <img src="Images/ToolsOptionsLineNumbers.PNG" class="img-fluid img-responsive img-rounded" alt="VS line numbers" width="300" /></a>
+                        Check 'Line numbers'<br />
+                        <br />
+
+                        Under &gt;Web Forms Designer; check 'Legagcy Web Forms designer' and Start Pages in "Design View"
+                            <br />
+                        <a href="Images/ToolsOptionsLegacyWebForms.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ToolsOptionsLegacyWebForms.PNG', 'popup'); return false;">
+                            <img src="Images/ToolsOptionsLegacyWebForms.PNG" class="img-fluid img-responsive img-rounded" alt="VS web form designer" width="300" /></a>
+                        Enable 'Legacy Web Forms designer'<br />
+
+                        <br />
+                    </li>
+
+                    <li>Update Visual Studio as required.<br />
+                        Periodically updates are made available for Visual Studio.<br />
+                        You are notified by a red bell icon in the lower-right.<br />
+                        <a href="Images/UpdateAvailableIcon.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/UpdateAvailableIcon.PNG', 'popup'); return false;">
+                            <img src="Images/UpdateAvailableIcon.PNG" class="img-fluid img-responsive img-rounded" alt="Update Available" width="300" /></a>
+                        Install updates outside of class, as they can take time.<br />
+                        Note that you do not have to sign into your Minnstate account to use Visual Studio.<br />
+
+                    </li>
+
+
+                    <li><strong>Very Important-Register Visual Studio with your Product Key.</strong></li>
+
+                    <li>From the Visual Studio menu choose Help &gt; Register Visual Studio.</li>
+
+                    <li>On the right side of the window that appears there will be a link such as &#39;Apply Product Key&#39;, click that link and paste your Product Key into the dialog box that appears.&nbsp;<br />
+                        Follow any prompts. </li>
+
+                    <li>Use the Snipping Tool to make a screenshot of the window showing that your ProductKey was applied and save the screen shot:<br />
+                        <a href="Images/RegisterVS.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/RegisterVS.PNG', 'popup'); return false;">
+                            <img alt="Product Key Applied" class="img-rounded img-responsive" src="Images/RegisterVS.PNG" width="300" /></a>
+
+                    </li>
+
+
+                </ol>
+
+
+                <p class="text-primary">
+                    <strong>(25) 2.
+						Save this screenshot  as &quot;Ex5A&quot; in the OneNote file in your ' <code><span id="Path3"></span></code>
+                        ' folder.<br />
+                    </strong>
+
+
+                </p>
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex5A</h2>
+                    <hr />
+                </div>
+
+
+                <hr />
+
+                <hr />
+
+                <p>
+                    Create a GitHub account so that you will be able to obtain course assignments in the coming weeks.
+                </p>
+
+                <ol>
+                    <li>Open a browser to <a href="https://github.com/" target="_blank" class="bg-info text-white">GitHub</a>
+                    </li>
+
+                    <li>Log into GitHub and create an account, if you do not already have one.<br />
+                    </li>
+
+
+                </ol>
+
+                <br />
+                <hr />
+
+
+                <hr />
+
+                <div class="col-lg-12 text-primary">
+                    <p>
+                        After creating your GitHub account use File Explorer to navigate to the folder
+							<code><span id="Path4"></span></code>
+                        ' .<br />
+                        Use the Snipping Tool to make a screenshot of your GitHub home page.<br />
+                        It will look like this:
+					<a href="Images/Github.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/Github.PNG', 'popup'); return false;">
+                        <img src="Images/Github.PNG" class="img-rounded img-responsive" alt="Github" width="300" /></a>
+
+
+
+                        .<br />
+
+                        <strong>(25) 3. Save the screenshot  as &quot;Ex5B&quot; in the OneNote file in your ' <code><span id="Path5"></span></code>
+                            ' folder.</strong>
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex5B</h2>
+                    <hr />
+                </div>
+
+
+                <hr />
+
+                <hr />
+
+
+
+
+                <br />
+                <hr />
+
+
+                <hr />
+
+                <div class="col-lg-12 text-primary">
+
+
+                    <p>
+                        Download and install Git for Windows, so that Visual Studio can use git commands.<br />
+
+                        <img src="Images/gfw.png" class="img-fluid img-responsive img-rounded" alt="Git For Windows icon" />
+
+                    </p>
+
+                    <ol>
+                        <li>Open a browser to <a href="https://git-scm.com/download/win" target="_blank" class="bg-info text-white">Git for Windows</a>
+                        </li>
+
+                        <li>Download the latest 64-bit version for Windows.<br />
+
+                            <a href="Images/gfwDownload.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/gfwDownload.PNG', 'popup'); return false;">
+                                <img src="Images/gfwDownload.PNG" class="img-rounded img-responsive" alt="Git for Windows Download" width="300" /></a>
+
+
+
+                        </li>
+
+                    </ol>
+
+                    <p>
+                    </p>
+
+                    <p>
+                        After installing  Git for Windows, open the Control Panel to Programs and Features.<br />
+                        Use File Explorer to navigate to the folder
+							<code><span id="Path6"></span></code>
+                        ' .<br />
+                        Use the Snipping Tool to make a screenshot showing that Git for Windows is installed.<br />
+
+                        <br />
+
+                        <strong>(25) 4. Save the screenshot  as &quot;Ex5C&quot; in the OneNote file in your ' <code><span id="Path7"></span></code>
+                            ' folder.</strong>
+
+                    </p>
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+            <div class="col-lg-12 text-danger">
+                <h2>Screenshot Ex5C</h2>
+                <hr />
+            </div>
+
+
+
+
+
+
+
+            <div class="col-lg-12"><a href="#Exercise98" class="btn btn-info" data-toggle="collapse">Exercise 6-Zoom Web Conferencing</a></div>
+
+            <div id="Exercise98" class="collapse in  col-lg-12">
+                <br />
+                <ol>
+                    <li>Browse to <a href="https://minnstate.zoom.us/download" target="_blank" class="bg-info text-white">https://minnstate.zoom.us/</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Click the &#39;Download Client&#39; link at the bottom of the page to install the latest Zoom Client for meetings.<br />
+                        <a href="Images/ZoomSSO.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ZoomSSO.PNG', 'popup'); return false;">
+                            <img src="Images/ZoomSSO.PNG" alt="Zoom Signin" class="img-responsive" width="300" /></a>
+                    </li>
+
+
+                    <li>Click the &#39;Sign in&#39; button, your username is&nbsp; <code>StarID@go.minnstate.edu</code> ; password is your WSU network password
+                            <br />
+                        Note: This sign in process authenticates you to the Minnstate Zoom system so that you do not show up as a &#39;Guest&#39; in meetings.<br />
+                        <strong>By authenticating you ensure you will get credit for Attendance when the Professor runs the Zoom Attendance report.</strong>
+                    </li>
+
+                    <li>From the D2L &#39;Course Info&#39; widget click on the url for the web conference.<br />
+                        eProfessor Zoom Room-<a href="https://minnstate.zoom.us/my/eprofessor" target="_blank" class="bg-info text-white">https://minnstate.zoom.us/my/eprofessor</a><br />
+                        Note: if doing this assignment outside of class time, log into your personal Zoom room.<br />
+                    </li>
+
+                    <li>Under Settings&gt;General, check &#39;Always show meeting controls&#39;<br />
+                        The meeting control toolbar will appear at the bottom of your Zoom meeting window-see screenshot in next step.<br />
+
+                        <a href="Images/MeetingControls.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/MeetingControls.PNG', 'popup'); return false;">
+                            <img src="Images/MeetingControls.PNG" alt="Zoom Meeting Controls" class="img-responsive" width="300" /></a>
+                        <br />
+                    </li>
+
+                    <li>On the meeting controls, open the Participants and Chat windows<br />
+                        <a href="Images/ZoomSetup.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ZoomSetup.JPG', 'popup'); return false;">
+                            <img src="Images/ZoomSetup.JPG" alt="Zoom Setup" class="img-responsive" width="300" /></a>
+                        <br />
+                    </li>
+
+                    <li>To prevent audio feedback during Zoom meetings in the classroom, from the meeting controls, lower left corner, choose the Microphone drop down list, then Leave Computer Audio.
+                        <br />
+                        <a href="Images/LeaveComputerAudio.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/LeaveComputerAudio.PNG', 'popup'); return false;">
+                            <img src="Images/LeaveComputerAudio.PNG" alt="Leave Computer Audio" class="img-responsive" width="250" /></a>
+                        <br />
+                        Note: if you are attending class remotely, make sure to join computer audio.
+
+                    </li>
+
+
+                </ol>
+
+
+
+                <p>
+                    In your Zoom account, click the 
+                    &#39;Profile&#39; on the left side and view your profile.<br />
+                    Make the window big enough to view at least the information shown below.<br />
+                </p>
+
+                <p>
+                    <a href="Images/ZoomProfile.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ZoomProfile.PNG', 'popup'); return false;">
+                        <img src="Images/ZoomProfile.PNG" alt="Zoom Profile" class="img-responsive" width="300" /></a><br />
+
+                </p>
+
+                <p class="text-primary">
+                    <strong>(25) 5. Use the Snipping Tool to make a screenshot of your profile.</strong><br />
+                </p>
+                <p>
+                    Save the screenshot  as &quot;Ex6&quot; in the OneNote file in your ' <code><span id="Path8"></span></code>
+                    ' folder.<br />
+                </p>
+
+            </div>
+
+
+
+            <div class="col-lg-12 text-danger">
+                <h2>Screenshot Ex6</h2>
+                <hr />
+            </div>
+
+
+
+
+            <div class="col-lg-12"><a href="#Exercise97" class="btn btn-info" data-toggle="collapse">Exercise 7-D2L Due Dates in Outlook</a></div>
+
+            <div id="Exercise97" class="collapse in  col-lg-12">
+
+                <p>
+                    Note-as of spring 2024 Outlook is updated, screenshots and directions below have been revised accordingly.
+                    <br />
+
+                    <a href="Images/NewOutlook2024.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/NewOutlook2024.PNG', 'popup'); return false;">
+                        <img src="Images/NewOutlook2024.PNG" alt="New Outlook interface" class="img-responsive" width="300" /></a><br />
+
+                </p>
+
+
+                <p>
+                    All course assignments are listed in the D2L calendar.<br />
+                    You view assignment due dates in your Outlook desktop client by subscribing to the .ics calendar feed provided by D2L.<br />
+                </p>
+
+                <p>
+                    In the first part you will obtain the .ics calendar feed from D2L.
+                </p>
+
+                <ol>
+                    <li>Log into D2L and find this course.
+                            <br />
+                        Click on 'Calendar' or 'Materials&gt;Calendar' from the menu.<br />
+
+                        <a href="Images/F00_D2L_Calendar_Select.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_D2L_Calendar_Select.png', 'popup'); return false;">
+                            <img src="Images/F00_D2L_Calendar_Select.png" alt="click calendar" class="img-responsive" width="300" /></a><br />
+                    </li>
+
+                    <li>Click on the 'Settings' icon. (also note the Subscribe icons, you will use this later) 
+                <br />
+
+                        <a href="Images/F00_D2L_Calendar_Settings.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_D2L_Calendar_Settings.png', 'popup'); return false;">
+                            <img src="Images/F00_D2L_Calendar_Settings.png" alt="click settings" class="img-responsive" width="300" /></a><br />
+                        <br />
+                    </li>
+
+                    <li>Make sure to check 'Enable Calendar Feeds"<br />
+
+                        <a href="Images/F00_D2L_Calendar_Feeds.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_D2L_Calendar_Feeds.png', 'popup'); return false;">
+                            <img src="Images/F00_D2L_Calendar_Feeds.png" alt="check enable calendar feeds" class="img-responsive" width="300" /></a><br />
+
+                    </li>
+
+                    <li>Click the Subscribe button (see Step 2) and select your course from the list, then copy the calendar feed, and paste it into Outlook.<br />
+
+                        <a href="Images/F00_SelectCourse.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_SelectCourse.png', 'popup'); return false;">
+                            <img src="Images/F00_SelectCourse.png" alt="select course" class="img-responsive" width="300" /></a><br />
+
+
+                        <a href="Images/F00_CalendarFeedUrl.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_CalendarFeedUrl.JPG', 'popup'); return false;">
+                            <img src="Images/F00_CalendarFeedUrl.JPG" alt=" calendar feed" class="img-responsive" width="300" /></a><br />
+                        <br />
+                        <hr />
+                    </li>
+
+
+                    <li>In the second part you will put the calendar feed into Outlook.<br />
+                        <hr />
+                        Open Outlook Desktop, 
+                            click the &#39;Calendar&#39; icon in the left column to display your Outlook calendar.<br />
+                        From the 
+                            Ribbon &#39;Manage Calendars&#39; section, choose &#39;Add Calendar&#39; File&gt;Account Settings&gt;Account Settings...&nbsp;&nbsp; When the dialog box appears choose the &quot;Internet Calendars&quot; tab, click &quot;New...&quot;&nbsp; Paste the D2L calendar feed url, click &quot;Add&quot;, use the course name as the folder name, click OK, then click close.
+                <br />
+                        <a href="Images/OutlookAddCalendar.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/OutlookAddCalendar.PNG', 'popup'); return false;">
+                            <img src="Images/OutlookAddCalendar.PNG" alt=" add calendar" class="img-responsive" width="500" /></a><br />
+
+                        <br />
+                        <br />
+
+                        <a href="Images/calendarfeed.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/calendarfeed.png', 'popup'); return false;">
+                            <img src="Images/calendarfeed.png" alt="  calendar feed" class="img-responsive" width="300" /></a><br />
+
+                    </li>
+
+                    <li>It will take several seconds to install, then your Outlook Calendar will appear with the new calendar feed for this course.<br />
+                        You may need to adjust your calendar settings to view the due dates properly.<br />
+                        'Week' view is shown below instead of the typical 'Work Week' view so that you can see the Saturday assignment due dates.<br />
+
+
+                        <a href="Images/F00_OutlookCalendar.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_OutlookCalendar.png', 'popup'); return false;">
+                            <img src="Images/F00_OutlookCalendar.png" alt="outlook calendar" class="img-responsive" width="300" /></a><br />
+                    </li>
+
+                    <li>Repeat as desired to add calendars from other D2L courses.<br />
+                        You can also subscribe to calendars from your favorite sports teams, if they make the feed available.<br />
+                        Ref: <a href="http://www.southendzone.com/ics/" class="bg-info text-white" target="_blank">http://www.southendzone.com/ics/</a><br />
+                    </li>
+
+                </ol>
+
+                <div class="col-lg-12 ">
+
+                    <p class="text-primary">
+                        <strong>(25) 6. After installing the D2L calendar feed for this course into your Outlook desktop client, take a screenshot of this course's calendar in Outlook using the Snipping tool. </strong>
+                    </p>
+
+                    <p>
+                        Make sure your screenshot includes your username in the Outlook title bar.<br />
+                        Save the screenshot  as &quot;Ex7_OutlookCalendar&quot; as a .gif, .png or .jpg file in the 
+                                OneNote file in your Formative00_2 folder.
+                    </p>
+
+
+
+                </div>
+                <hr />
+            </div>
+            <div class="col-lg-12 text-danger">
+                <h2>Screenshot Ex7</h2>
+                <hr />
+            </div>
+
+
+            <div id="PDFfileSubmission">&nbsp;</div>
+
+            <div class="col-lg-12"><a href="#ExercisePDF1" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Submission</a></div>
+
+            <div id="ExercisePDF1" class="collapse in  col-lg-12">
+                <hr />
+
+
+
+                <div class="col-lg-12 text-primary">
+
+                    <p>
+                        You created one .pdf (portable document format) file from the screenshots taken above.<br />
+                    </p>
+
+
+                    <p>
+                        <strong>(50) 7. Upload your completed 'Formative00_Part2.pdf' file to the D2L 'Formative00_Part2' Assignment folder.</strong>
+                        <br />
+                        ...<br />
+                    </p>
+
+                </div>
+                <hr />
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="xLicense" class="col-lg-12 text-muted"></div>
+        <div id="xfooter" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- JS dependencies -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <!-- Load constants FIRST -->
+    <script src="../constants.js"></script>
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <script>
+        // Initialization logic: all DOM updates happen here.
+        function initializePage() {
+            // Set variables from constants.js and CourseConstants.js
+            setVariables();
+
+            // Get assignment value
+            var assignmentInput = document.getElementById("assignment");
+            var assignmentValue = assignmentInput ? assignmentInput.value : "Formative00_1";
+            var Path = "\\OneDrive - MNSCU\\" + (typeof xClass !== "undefined" ? xClass : "") + "\\" + assignmentValue + "\\";
+
+            // Fill all DOM elements that need the Path
+            var idsToUpdate = ["Path1", "Path2", "Path3", "Path4", "Path5", "Path6", "Path7", "Path8"];
+            idsToUpdate.forEach(function (id) {
+                var el = document.getElementById(id);
+                if (el) el.innerHTML = Path;
+            });
+
+            // Footer and license info
+            if (document.getElementById("xLicense"))
+                document.getElementById("xLicense").innerHTML = typeof ccLicense !== "undefined" ? ccLicense : "";
+            if (document.getElementById("xfooter"))
+                document.getElementById("xfooter").innerHTML = new Date().toLocaleString();
+        }
+    </script>
+
+
+</body>
+</html>

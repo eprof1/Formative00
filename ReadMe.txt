@@ -1,3 +1,9 @@
+PgP 5/31/2025
+leaving Formative00 alone, but now splitting it into 3 parts, 1, 2 and 3 and revising structure
+restructured/refactored js and css and constants files 
+
+
+
 PgP 11/21/2024
 need to add checks to Part2, Ex5, make sure Python interpreter shows up in tool bar(File>NewProject>PythonApplication)
 need to add note at end of Part 3, how to remove software once class is over (do last day of class?)

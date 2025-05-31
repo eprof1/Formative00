@@ -1,20 +1,3 @@
-﻿// this is a special constants file just for the Formative00 assignment, actual website uses only personal info, not javascript code
-// these are constants for course during current semester
-
-// student- update variables below this line
-
-var xeMail = "MyStarID@go.minnstate.edu";
-
-var xFirstName = "MyFirstName";
-
-var xLastName = "MyLastName";
-
-var xStarID = "MyStarID";
-
-var xSection = "MySection";
-
-
-// below is from the new file,needed on the github repo site to make things work, put below in ReadOnl/courseConstants.js for production
 // CourseConstants.js
 // Professor-controlled course-wide constants for MIS202
 
