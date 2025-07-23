@@ -1,3 +1,5 @@
+PgP 7/23/2025 major revision-latest version again here, incorporated modifications  from MIS202x experiment 
+
 PgP 6/8/2025 note the latest versions of Formative00 are actually in eProf1/MIS202x because I had to straighten out javascript and dom
 
 PgP 5/31/2025
