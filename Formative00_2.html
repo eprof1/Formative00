@@ -5,6 +5,7 @@
 
     <!--
         PgP 5/28/2025 update to html and javascript to coincide with best coding practices
+        Formative00 split into 3 separate html files instead of using tabs, too unwieldly
 		PgP 7/17/2020  Final version, with all updates for fall 2020
 		-->
 
@@ -22,71 +23,139 @@
 
     <title>Formative00Part2</title>
 
-
 </head>
 
 
+<body >
 
-<body onload="initializePage()">
 
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessFormData.aspx" method="post" name="frmAssignment" id="frmAssignment">
 
-    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
         <input name="InstID" id="InstID" value="00617282" type="hidden">
         <!-- had to put assignment here, because it is used in the path calculation -->
         <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
-
-
 
         <hr />
 
 
 
-        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
-        <div class="row col-lg-12">
-            <div class="col-lg-3">
-                <label class="text-primary" for="FirstName">First Name:</label>
-                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly" />
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="LastName">Last Name:</label>
-                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly" />
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="pin">StarID:</label>
-                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly" />
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="email">Email:</label>
-                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly" />
-            </div>
+<h2 id="student-info" class="sr-only">Student Information</h2>
+<div class="row" aria-labelledby="student-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="FirstName" class="text-dark">First Name:</label>
+            <input class="form-control"
+                   name="FirstName"
+                   id="FirstName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="given-name"
+                   aria-label="First Name"
+                   tabindex="0" />
         </div>
-
-        <div class="row col-lg-12">
-            <div class="col-lg-3">
-                <label class="text-primary" for="semester">Semester:</label>
-                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly" />
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="class">Class:</label>
-                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly" />
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="section">Section:</label>
-                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly" />
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="section">Assignment:</label>
-                <input class="form-control" name="assignment" id="assignment" value="Formative00_2" type="text" readonly="readonly" />
-            </div>
-
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="LastName" class="text-dark">Last Name:</label>
+            <input class="form-control"
+                   name="LastName"
+                   id="LastName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="family-name"
+                   aria-label="Last Name"
+                   tabindex="0" />
         </div>
-        <!-- -end-Student, class and assignment information-end -->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="StarID" class="text-dark">StarID:</label>
+            <input class="form-control"
+                   name="StarID"
+                   id="StarID"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="username"
+                   aria-label="StarID"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="email" class="text-dark">Email:</label>
+            <input class="form-control"
+                   name="email"
+                   id="email"
+                   type="email"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="email"
+                   aria-label="Email"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+<input name="pin" id="pin" type="hidden" aria-hidden="true" />
 
-        <!-- calculate the path based on the assignment -->
-        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
-
-
-
+<h2 id="course-info" class="sr-only">Course Information</h2>
+<div class="row" aria-labelledby="course-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Semester" class="text-dark">Semester:</label>
+            <input class="form-control"
+                   name="Semester"
+                   id="Semester"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Semester"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Class" class="text-dark">Class:</label>
+            <input class="form-control"
+                   name="Class"
+                   id="Class"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Class"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Section" class="text-dark">Section:</label>
+            <input class="form-control"
+                   name="Section"
+                   id="Section"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Section"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="assignment" class="text-dark">Assignment:</label>
+            <input class="form-control"
+                   name="assignment"
+                   id="assignment"
+                   type="text"
+                   readonly
+                   value="Formative00_2"
+                   aria-readonly="true"
+                   aria-label="Assignment"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
 
 
         <h1 class=" text-center">Basic Digital Technologies-Part 2</h1>
@@ -148,7 +217,7 @@
             <ol>
                 <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
                 <li>Create a new page and name it <code>Formative00_Part2</code>.</li>
-                <li>Save this <code>Formative00_Part2.pdf</code> file into your ' <code><span id="Path1"></span></code>
+                <li>Save this <code>Formative00_Part2.pdf</code> file into your ' <code><span id="Path8"></span></code>
                     ' folder.<br />
                 </li>
                 <li>Use the <strong>Snipping Tool</strong> to take each required screenshot (Ex5A, Ex5B, Ex5C, Ex6, Ex7).</li>
@@ -167,13 +236,6 @@
 
 
         <div id="Part2" class="col-lg-12 ">
-
-
-
-            <!-- Calculate the correct Path for saving the files -->
-            <!--	<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>  -->
-
-
 
             <div class="row col-lg-12">
                 <div class="col-lg-1"></div>
@@ -219,7 +281,7 @@
 
                 <p class="text-primary">
                     <strong>(25) 1.  Save this file as "ProductKey.txt" in your ' 
-							<code><span id="Path2"></span></code>
+							<code><span id="Path1"></span></code>                        
                         ' folder. Place a copy in your OneNote file.<br />
                     </strong>
 
@@ -305,7 +367,7 @@
 
                 <p class="text-primary">
                     <strong>(25) 2.
-						Save this screenshot  as &quot;Ex5A&quot; in the OneNote file in your ' <code><span id="Path3"></span></code>
+						Save this screenshot  as &quot;Ex5A&quot; in the OneNote file in your ' <code><span id="Path2"></span></code>                        
                         ' folder.<br />
                     </strong>
 
@@ -345,7 +407,7 @@
                 <div class="col-lg-12 text-primary">
                     <p>
                         After creating your GitHub account use File Explorer to navigate to the folder
-							<code><span id="Path4"></span></code>
+							<code><span id="Path3"></span></code>
                         ' .<br />
                         Use the Snipping Tool to make a screenshot of your GitHub home page.<br />
                         It will look like this:
@@ -356,7 +418,7 @@
 
                         .<br />
 
-                        <strong>(25) 3. Save the screenshot  as &quot;Ex5B&quot; in the OneNote file in your ' <code><span id="Path5"></span></code>
+                        <strong>(25) 3. Save the screenshot  as &quot;Ex5B&quot; in the OneNote file in your ' <code><span id="Path4"></span></code>
                             ' folder.</strong>
 
                     </p>
@@ -414,13 +476,13 @@
                     <p>
                         After installing  Git for Windows, open the Control Panel to Programs and Features.<br />
                         Use File Explorer to navigate to the folder
-							<code><span id="Path6"></span></code>
+							<code><span id="Path5"></span></code>
                         ' .<br />
                         Use the Snipping Tool to make a screenshot showing that Git for Windows is installed.<br />
 
                         <br />
 
-                        <strong>(25) 4. Save the screenshot  as &quot;Ex5C&quot; in the OneNote file in your ' <code><span id="Path7"></span></code>
+                        <strong>(25) 4. Save the screenshot  as &quot;Ex5C&quot; in the OneNote file in your ' <code><span id="Path6"></span></code>
                             ' folder.</strong>
 
                     </p>
@@ -511,7 +573,7 @@
                     <strong>(25) 5. Use the Snipping Tool to make a screenshot of your profile.</strong><br />
                 </p>
                 <p>
-                    Save the screenshot  as &quot;Ex6&quot; in the OneNote file in your ' <code><span id="Path8"></span></code>
+                    Save the screenshot  as &quot;Ex6&quot; in the OneNote file in your ' <code><span id="Path7"></span></code>
                     ' folder.<br />
                 </p>
 
@@ -532,7 +594,8 @@
             <div id="Exercise97" class="collapse in  col-lg-12">
 
                 <p>
-                    Note-as of spring 2024 Outlook is updated, screenshots and directions below have been revised accordingly.
+                    Note-Outlook 
+                    is frequently updated, screenshots and directions below may be different.
                     <br />
 
                     <a href="Images/NewOutlook2024.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/NewOutlook2024.PNG', 'popup'); return false;">
@@ -616,7 +679,7 @@
 
                     <li>Repeat as desired to add calendars from other D2L courses.<br />
                         You can also subscribe to calendars from your favorite sports teams, if they make the feed available.<br />
-                        Ref: <a href="http://www.southendzone.com/ics/" class="bg-info text-white" target="_blank">http://www.southendzone.com/ics/</a><br />
+                        Ref: <code> https://sports.yahoo.com/nfl/teams/nwe/ical.ics   </code> <br />
                     </li>
 
                 </ol>
@@ -673,65 +736,22 @@
 
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </form>
 
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
 
     <!-- Creative Commons License Info -->
     <footer>
-        <div id="xLicense" class="col-lg-12 text-muted"></div>
-        <div id="xfooter" class="col-lg-12 text-muted"></div>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
     </footer>
 
-    <!-- JS dependencies -->
+    <!-- ========== Script Includes (Order is Critical) ========== -->
     <script src="../../ReadOnly/jquery-1.js"></script>
     <script src="../../ReadOnly/bootstrap.js"></script>
-    <!-- Load constants FIRST -->
-    <script src="../constants.js"></script>
-    <script src="../../ReadOnly/CourseConstants.js"></script>
-
-    <script>
-        // Initialization logic: all DOM updates happen here.
-        function initializePage() {
-            // Set variables from constants.js and CourseConstants.js
-            setVariables();
-
-            // Get assignment value
-            var assignmentInput = document.getElementById("assignment");
-            var assignmentValue = assignmentInput ? assignmentInput.value : "Formative00_1";
-            var Path = "\\OneDrive - MNSCU\\" + (typeof xClass !== "undefined" ? xClass : "") + "\\" + assignmentValue + "\\";
-
-            // Fill all DOM elements that need the Path
-            var idsToUpdate = ["Path1", "Path2", "Path3", "Path4", "Path5", "Path6", "Path7", "Path8"];
-            idsToUpdate.forEach(function (id) {
-                var el = document.getElementById(id);
-                if (el) el.innerHTML = Path;
-            });
-
-            // Footer and license info
-            if (document.getElementById("xLicense"))
-                document.getElementById("xLicense").innerHTML = typeof ccLicense !== "undefined" ? ccLicense : "";
-            if (document.getElementById("xfooter"))
-                document.getElementById("xfooter").innerHTML = new Date().toLocaleString();
-        }
-    </script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
 
 
 </body>

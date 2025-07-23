@@ -5,6 +5,7 @@
 
     <!--
         PgP 5/28/2025 update to html and javascript to coincide with best coding practices
+        Formative00 split into 3 separate html files instead of using tabs, too unwieldly
 		PgP 7/17/2020  Final version, with all updates for fall 2020
 		-->
 
@@ -22,65 +23,226 @@
 
     <title>Formative00Part1</title>
 
-
 </head>
 
 
+<body>
 
-<body onload="initializePage()">
 
 
-    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessFormData.aspx" method="post" name="frmAssignment" id="frmAssignment">
+
         <input name="InstID" id="InstID" value="00617282" type="hidden">
         <!-- had to put assignment here, because it is used in the path calculation -->
         <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
 
-
-
         <hr />
 
-
-
         <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
-        <div class="row col-lg-12">
-            <div class="col-lg-3">
-                <label class="text-primary" for="FirstName">First Name:</label>
-                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly" />
+
+        <!--
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="text-primary" for="FirstName">First Name:</label>
+                    <input class="form-control" name="FirstName" id="FirstName" type="text" readonly />
+                </div>
             </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="LastName">Last Name:</label>
-                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly" />
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="text-primary" for="LastName">Last Name:</label>
+                    <input class="form-control" name="LastName" id="LastName" type="text" readonly />
+                </div>
             </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="pin">StarID:</label>
-                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly" />
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="text-primary" for="StarID">StarID:</label>
+                    <input class="form-control" name="StarID" id="StarID" type="text" readonly />
+                </div>
             </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="email">Email:</label>
-                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly" />
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="text-primary" for="email">Email:</label>
+                    <input class="form-control" name="email" id="email" type="email" readonly />
+                </div>
+            </div>
+        </div>
+        <input name="pin" id="pin" type="hidden" />
+
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="text-primary" for="Semester">Semester:</label>
+                    <input class="form-control" name="Semester" id="Semester" type="text" readonly />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="text-primary" for="Class">Class:</label>
+                    <input class="form-control" name="Class" id="Class" type="text" readonly />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="text-primary" for="Section">Section:</label>
+                    <input class="form-control" name="Section" id="Section" type="text" readonly />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="text-primary" for="assignment">Assignment:</label>
+                    <input class="form-control" name="assignment" id="assignment" value="Formative00_1" type="text" readonly />
+                </div>
             </div>
         </div>
 
-        <div class="row col-lg-12">
-            <div class="col-lg-3">
-                <label class="text-primary" for="semester">Semester:</label>
-                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly" />
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="class">Class:</label>
-                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly" />
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="section">Section:</label>
-                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly" />
-            </div>
-            <div class="col-lg-3">
-                <label class="text-primary" for="section">Assignment:</label>
-                <input class="form-control" name="assignment" id="assignment" value="Formative00_1" type="text" readonly="readonly" />
-            </div>
+            -->
 
-        </div>
+
         <!-- -end-Student, class and assignment information-end -->
+
+
+
+
+
+
+<h2 id="student-info" class="sr-only">Student Information</h2>
+<div class="row" aria-labelledby="student-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="FirstName" class="text-dark">First Name:</label>
+            <input class="form-control"
+                   name="FirstName"
+                   id="FirstName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="given-name"
+                   aria-label="First Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="LastName" class="text-dark">Last Name:</label>
+            <input class="form-control"
+                   name="LastName"
+                   id="LastName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="family-name"
+                   aria-label="Last Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="StarID" class="text-dark">StarID:</label>
+            <input class="form-control"
+                   name="StarID"
+                   id="StarID"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="username"
+                   aria-label="StarID"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="email" class="text-dark">Email:</label>
+            <input class="form-control"
+                   name="email"
+                   id="email"
+                   type="email"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="email"
+                   aria-label="Email"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+<input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+<h2 id="course-info" class="sr-only">Course Information</h2>
+<div class="row" aria-labelledby="course-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Semester" class="text-dark">Semester:</label>
+            <input class="form-control"
+                   name="Semester"
+                   id="Semester"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Semester"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Class" class="text-dark">Class:</label>
+            <input class="form-control"
+                   name="Class"
+                   id="Class"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Class"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Section" class="text-dark">Section:</label>
+            <input class="form-control"
+                   name="Section"
+                   id="Section"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Section"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="assignment" class="text-dark">Assignment:</label>
+            <input class="form-control"
+                   name="assignment"
+                   id="assignment"
+                   type="text"
+                   readonly
+                   value="Formative00_1"
+                   aria-readonly="true"
+                   aria-label="Assignment"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -88,16 +250,9 @@
 
         <hr />
 
-
-
-
         <div class="tab-content">
 
-
-
             <div id="Part1" class="col-lg-12 ">
-
-
                 <div class="row col-lg-12">
                     <div class="col-lg-4 h3 text-danger">175 points</div>
                     <div class="col-lg-1"></div>
@@ -372,8 +527,10 @@
 
                     <p>
                         Examine the top of this page, and notice that the First Name field contains MyFirstName, the Last Name field contains MyLastName, the StarID field contains MyStarID, and the Email field contains MyStarID@go.minnstate.edu.<br />
-                        You will enter your first name, last name and StarID into a <code>constants.js</code> file to personalize your website and all other assignments for this class.
-						<br />
+                        You will enter your first name, last name, StarID, pin (same as StarID) and NetworkUsername into a <code>studentConstants.js</code> file to personalize your website and all other assignments for this class.
+						</p>
+                        <p> <a href="https://eprofessor.azurewebsites.net/HelpFiles/NetworkUserName/NetworkUserName.html">NetworkUsername information</a> </p>
+                    <p>
                         This demonstrates the power of coding-to reduce errors, save time and add functionality.<br />
                         Java Script and VB Script are used to automate and facilitate this course in the same manner as other software powering the web, ecommerce, everything.
                     </p>
@@ -625,61 +782,27 @@
 
                 </div>
 
-
-
             </div>
-
-
 
         </div>
 
-
-
-
     </form>
 
-    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+    <!--  PgP 5 / 31 / 2025 place js code at end to prevent race conditions -->
 
+    <!--Creative Commons License Info-->
 
-    <!-- Creative Commons License Info -->
     <footer>
-        <div id="xLicense" class="col-lg-12 text-muted"></div>
-        <div id="xfooter" class="col-lg-12 text-muted"></div>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
     </footer>
 
-    <!-- JS dependencies -->
+    <!-- ========== Script Includes(Order is Critical) ========== -->
     <script src="../../ReadOnly/jquery-1.js"></script>
     <script src="../../ReadOnly/bootstrap.js"></script>
-    <!-- Load constants FIRST -->
-    <script src="../constants.js"></script>
-    <script src="../../ReadOnly/CourseConstants.js"></script>
-
-    <script>
-        // Initialization logic: all DOM updates happen here.
-        function initializePage() {
-            // Set variables from constants.js and CourseConstants.js
-            setVariables();
-
-            // Get assignment value
-            var assignmentInput = document.getElementById("assignment");
-            var assignmentValue = assignmentInput ? assignmentInput.value : "Formative00_1";
-            var Path = "\\OneDrive - MNSCU\\" + (typeof xClass !== "undefined" ? xClass : "") + "\\" + assignmentValue + "\\";
-
-            // Fill all DOM elements that need the Path
-            var idsToUpdate = ["Path1", "Path2", "Path3", "Path4", "Path5", "Path6", "Path7", "Path8"];
-            idsToUpdate.forEach(function (id) {
-                var el = document.getElementById(id);
-                if (el) el.innerHTML = Path;
-            });
-
-            // Footer and license info
-            if (document.getElementById("xLicense"))
-                document.getElementById("xLicense").innerHTML = typeof ccLicense !== "undefined" ? ccLicense : "";
-            if (document.getElementById("xfooter"))
-                document.getElementById("xfooter").innerHTML = new Date().toLocaleString();
-        }
-    </script>
-
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
 
 </body>
 </html>
