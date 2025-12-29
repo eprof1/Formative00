@@ -1,0 +1,14 @@
+name: wsu_mis_base
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - jupyterlab>=4
+  - ipykernel
+  - ipywidgets
+  - pandas
+  - matplotlib
+  - requests
+  - rich
+  - tabulate

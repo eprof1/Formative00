@@ -1,0 +1,17 @@
+name: wsu_mis_ai
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - jupyterlab>=4
+  - ipykernel
+  - ipywidgets
+  - requests
+  - python-dotenv
+  - fastapi
+  - uvicorn
+  - rich
+  - openai>=1.0.0
+  - pip:
+      - httpx
