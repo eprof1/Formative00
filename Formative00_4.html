@@ -29,7 +29,8 @@
 <body>
 
 
-    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessFormData.aspx" method="post" name="frmAssignment" id="frmAssignment">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
 
         <input name="InstID" id="InstID" value="00617282" type="hidden">
         <!-- had to put assignment here, because it is used in the path calculation -->
@@ -200,6 +201,19 @@
                 <li>Install Ollama, pull a starter model, and make a simple API call to your local LLM.</li>
             </ol>
 
+            <p>Conda Quick Reference Commands:</p>
+
+            <ul>
+                <li><code>conda info</code> — Show your Conda setup + active environment</li>
+                <li><code>conda env list</code> — List all Conda environments (active one marked with <code>*</code>)</li>
+                <li><code>conda activate &lt;ENV_NAME&gt;</code> — Switch to an environment (example: <code>conda activate wsu_mis_base</code>)</li>
+                <li><code>conda list</code> — List packages installed in the active environment</li>
+                <li><code>where python</code> — Confirm which Python executable is being used (path)</li>
+                <li><code>python -c "import sys; print(sys.executable)"</code> — Print the exact Python path for the active environment</li>
+            </ul>
+
+
+
             <hr />
 
             <div class="col-lg-12">
@@ -239,9 +253,11 @@
 pwsh --version
 where pwsh</code></pre>
 
+
+                <h3>Screenshot Ex11</h3>
                 <p>
-                    <h3>Screenshot Ex11</h3><br>
-                   <strong>(50)</strong> Take a screenshot showing your PowerShell 7 window with the three commands above and their output.<br>
+                    <br>
+                    <strong>(50)</strong> Take a screenshot showing your PowerShell 7 window with the three commands above and their output.<br>
                     Save it as <code>Ex11_PowerShell7</code> (png/jpg) in your OneNote artifact.<br>
                     Add one sentence explaining what the screenshot verifies.
                
@@ -250,96 +266,97 @@ where pwsh</code></pre>
                 <hr />
             </div>
 
+
+
+
             <!-- =================== EXERCISE 12 =================== -->
-            <div class="col-lg-12"><a href="#Exercise12" class="btn btn-info" data-toggle="collapse">Exercise 12 — Install Miniforge + Create the Standard Python Environment</a></div>
+            <div class="col-lg-12">
+                <a href="#Exercise12" class="btn btn-info" data-toggle="collapse">New Exercise 12 — Install Miniforge + Create the Standard Python Environment
+                </a>
+            </div>
+
             <div id="Exercise12" class="collapse in col-lg-12">
 
                 <p class="text-primary">
-                    <strong>Goal:</strong> Install Miniforge and create the course Python environment from a <code>.yml</code> file.
-               
+                    <strong>Goal:</strong> Install Miniforge, confirm it’s working, and create the course Python environment from a <code>.yml</code> file.
                 </p>
 
                 <ol>
-                    <li>Download the Miniforge installer (Windows x86_64) from the course instructions.</li>
+                    <li>Download the Miniforge installer (Windows x86_64) from Professor Paulson's ReadOnly OneDrive folder, available in D2L.</li>
+
                     <li>Run the installer using the default location. (Do not install into OneDrive.)</li>
+
                     <li>Open <strong>Miniforge Prompt</strong> (Start Menu).</li>
-                    <li>Verify Miniforge works:</li>
-                </ol>
 
-                <pre><code>conda --version
+                    <li>Verify Miniforge and Python are accessible:
+      <pre><code>conda --version
 python --version</code></pre>
+                    </li>
 
-                <ol start="5">
-                    <li>Install <code>mamba</code> into the base environment (faster installs):</li>
-                </ol>
+                    <li>Verify environment and executable paths to confirm you are using the Miniforge-managed Python:
+      <pre><code>conda env list
+where python
+python -c "import sys; print(sys.executable)"</code></pre>
+                    </li>
 
-                <pre><code>conda install -n base mamba -y
+                    <li>Install <code>mamba</code> into the base environment (faster installs):
+      <pre><code>conda install -n base mamba -y
 mamba --version</code></pre>
+                    </li>
 
-                <ol start="6">
-                    <li>Create a working folder for this semester (use PowerShell 7):</li>
-                </ol>
-
-                <pre><code>New-Item -ItemType Directory -Force C:\Users\$env:USERNAME\Temp\WSU_MIS\env
+                    <li>Create a working folder for this semester (use PowerShell 7):
+      <pre><code>New-Item -ItemType Directory -Force C:\Users\$env:USERNAME\Temp\WSU_MIS\env
 New-Item -ItemType Directory -Force C:\Users\$env:USERNAME\Temp\WSU_MIS\notebooks
 New-Item -ItemType Directory -Force C:\Users\$env:USERNAME\html\mis_api_demo</code></pre>
+                    </li>
 
-                <ol start="7">
-                    <li>Download the provided environment file <code>wsu_mis_base.yml</code> to:</li>
-                </ol>
+                    <li>Download the provided environment file <code>wsu_mis_base.yml</code> to:
+      <p><code>C:\Users\&lt;StarID&gt;\Temp\WSU_MIS\env\wsu_mis_base.yml</code></p>
+                    </li>
 
-                <p><code>C:\Users\&lt;StarID&gt;\Temp\WSU_MIS\env\wsu_mis_base.yml</code></p>
-
-                <ol start="8">
-                    <li>In <strong>Miniforge Prompt</strong>, change into the folder and create the environment:</li>
-                </ol>
-
-                <pre><code>cd C:\Users\%USERNAME%\Temp\WSU_MIS\env
+                    <li>In <strong>Miniforge Prompt</strong>, change into the folder and create the environment:
+      <pre><code>cd C:\Users\%USERNAME%\Temp\WSU_MIS\env
 mamba env create -f wsu_mis_base.yml</code></pre>
 
+                        <p class="text-primary">
+                            <strong>Required:</strong> Create the AI environment too. We keep AI-related packages separate so the base environment stays fast and stable.
+                        </p>
 
-                <p class="text-primary">
-                    <strong>Required:</strong> Create the AI environment too. We keep AI-related packages separate so the base environment stays fast and stable.
-               
-                </p>
+                        <pre><code>mamba env create -f wsu_mis_ai.yml</code></pre>
 
-                <pre><code>mamba env create -f wsu_mis_ai.yml</code></pre>
+                        <p class="text-primary">
+                            <strong>Required:</strong> Register both environments as Jupyter kernels so you can pick the correct kernel inside JupyterLab.
+                        </p>
 
-                <p class="text-primary">
-                    <strong>Required:</strong> Register both environments as Jupyter kernels so you can pick the correct kernel inside JupyterLab.
-               
-                </p>
-
-                <pre><code>conda activate wsu_mis_base
+                        <pre><code>conda activate wsu_mis_base
 python -m ipykernel install --user --name wsu_mis_base --display-name "WSU MIS Base (wsu_mis_base)"
 
 conda activate wsu_mis_ai
-python -m ipykernel install --user --name wsu_mis_ai --display-name "WSU MIS AI (wsu_mis_ai)"
-</code></pre>
+python -m ipykernel install --user --name wsu_mis_ai --display-name "WSU MIS AI (wsu_mis_ai)"</code></pre>
+                    </li>
 
-
-                <ol start="9">
-                    <li>Activate the environment and verify:</li>
-                </ol>
-
-                <pre><code>conda activate wsu_mis_base
+                    <li>Activate the environment and verify:
+      <pre><code>conda activate wsu_mis_base
 python --version
 conda env list</code></pre>
+                    </li>
+                </ol>
 
-               
-                     <h3>Screenshot Ex12</h3><br>
+                <h3>Screenshot Ex12</h3>
+                <br>
+
                 <p>
                     <strong>(50)</strong>
-                    
-                    Take a screenshot showing Miniforge Prompt with:
-                   
-                    <code>conda --version</code>, <code>python --version</code>, and <code>conda activate wsu_mis_base</code>.<br>
+                    Take a screenshot showing Miniforge Prompt with
+    <code>conda --version</code>, <code>python --version</code>, and <code>conda activate wsu_mis_base</code>.<br>
                     Save as <code>Ex12_Miniforge</code> and add one verification sentence.
-               
                 </p>
 
                 <hr />
             </div>
+
+
+
 
             <!-- =================== EXERCISE 13 =================== -->
             <div class="col-lg-12"><a href="#Exercise13" class="btn btn-info" data-toggle="collapse">Exercise 13 — Launch JupyterLab + Run the System Check Notebook</a></div>
@@ -372,7 +389,8 @@ conda env list</code></pre>
                 <ol start="5">
                     <li>In JupyterLab, open the system check notebook. At the top-right, confirm the kernel is <strong>WSU MIS Base (wsu_mis_base)</strong>. Then click: <strong>Run → Run All Cells</strong>.</li>
                 </ol>
-                     <h3>Screenshot Ex13</h3><br>
+                <h3>Screenshot Ex13</h3>
+                <br>
                 <p>
                     <strong>(50)</strong>
                     Take a screenshot showing JupyterLab with the system check notebook open and the final cell output
@@ -424,7 +442,8 @@ conda env list</code></pre>
                 <pre><code>$body = @{ model="llama3.2:1b"; prompt="Write a 3-bullet checklist for a student submitting an assignment." } | ConvertTo-Json
 Invoke-RestMethod -Uri "http://localhost:11434/api/generate" -Method Post -Body $body -ContentType "application/json"</code></pre>
 
-                     <h3>Screenshot Ex14</h3><br>
+                <h3>Screenshot Ex14</h3>
+                <br>
                 <p>
                     <strong>(50)</strong>
                     Take a screenshot showing PowerShell 7 with the <code>ollama</code> verification and the API call response.<br>
@@ -514,18 +533,69 @@ wsl --status</code></pre>
                 <hr />
             </div>
 
+
+            <!-- =================== QUICK REFERENCE GUIDE =================== -->
+            <div class="col-lg-12">
+                <h2>Common Conda Commands</h2>
+
+
+                <ul>
+                    <li><code>conda --version</code> — Show Conda version</li>
+                    <li><code>conda info</code> — Summary of your Conda setup (active env, base env, channels, platform)</li>
+                    <li><code>conda config --show</code> — Show your Conda configuration (channels, settings)</li>
+                    <li><code>conda config --show-sources</code> — Show where config values are coming from (<code>.condarc</code> locations)</li>
+
+                    <li><code>conda env list</code> (or <code>conda info --envs</code>) — List all Conda environments and the active one</li>
+                    <li><code>conda list</code> — List packages installed in the active environment</li>
+                    <li><code>conda list -n &lt;ENV_NAME&gt;</code> — List packages installed in a specific environment</li>
+                    <li><code>conda list --explicit</code> — Export the exact package specs for the active environment</li>
+
+                    <li><code>where conda</code> (Windows) — Show which <code>conda.exe</code> is being used (path)</li>
+                    <li><code>where python</code> (Windows) — Show which <code>python.exe</code> is being used (path)</li>
+                    <li><code>python -c "import sys; print(sys.executable)"</code> — Print the exact Python executable path</li>
+
+                    <li><code>conda env export --from-history</code> — Export only the packages you explicitly installed (cleaner environment file)</li>
+                    <li><code>conda env export</code> — Export the full environment (often includes many dependencies)</li>
+
+                    <li><code>conda search &lt;PACKAGE&gt;</code> — Search for a package in configured channels</li>
+                    <li><code>conda search -c conda-forge &lt;PACKAGE&gt;</code> — Search a specific channel (example: conda-forge)</li>
+
+                    <li><code>conda clean --all</code> — Clean caches (can reclaim disk space; use with care)</li>
+                    <li><code>conda list --revisions</code> — Show install history (revisions) for the current environment</li>
+                    <li><code>conda install --revision &lt;N&gt;</code> — Roll back environment to a previous revision number</li>
+
+                    <li><code>pip --version</code> — Show pip version (inside the active environment)</li>
+                    <li><code>pip list</code> — List pip-installed packages (inside the active environment)</li>
+
+                    <li><strong>Models (if you use Ollama):</strong> <code>ollama list</code> — List local Ollama models</li>
+                    <li><strong>Models (if you use LM Studio CLI, if installed):</strong> <code>lms --help</code> — Show LM Studio CLI commands</li>
+                </ul>
+
+
+
+
+            </div>
+
+            <div class="col-lg-12">
+                <hr />
+                <input class="text-danger btn-block btn-lg" name="Submit" value="SUBMIT" type="submit" />
+                <br />
+            </div>
+
         </div>
 
-        <footer>
-            <div id="licenseInfo" class="col-lg-12 text-muted"></div>
-            <div id="footerText" class="col-lg-12 text-muted"></div>
-        </footer>
+    </form>
 
-        <!-- ========== Script Includes (Order is Critical) ========== -->
-        <script src="../../ReadOnly/jquery-1.js"></script>
-        <script src="../../ReadOnly/bootstrap.js"></script>
-        <script src="../studentConstants.js"></script>
-        <script src="../../ReadOnly/courseConstants.js"></script>
-        <script src="../../ReadOnly/domForms.js"></script>
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
 </body>
 </html>
