@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+// PgP 1/2/2026-first pass at creating Notebook Pipeline instructions
+// objective is to show students the choices currently available
+// may try this out at the end of sp26 semester in preparation for fall 26 course revisions
+
+<head>
+    <title>MIS202 - Formative00 Part 5 (Lifelong Student Notebook + AI Notebooks)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap -->
+    <link href="../ReadOnly/bootstrap.css" rel="stylesheet">
+</head>
+
+<body onload="setVariables()">
+
+    <div id="Heading" class="col-lg-12"></div>
+    <div class="col-lg-12"><hr /></div>
+
+    <form action="../ProcessFormData.asp" method="post" id="frmAssignment">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <label for="FirstName">First Name</label>
+                    <input class="form-control" name="FirstName" id="FirstName" type="text" />
+                </div>
+                <div class="col-lg-2">
+                    <label for="LastName">Last Name</label>
+                    <input class="form-control" name="LastName" id="LastName" type="text" />
+                </div>
+                <div class="col-lg-2">
+                    <label for="StarID">StarID</label>
+                    <input class="form-control" name="StarID" id="StarID" type="text" />
+                </div>
+                <div class="col-lg-2">
+                    <label for="StarID2">StarID (confirm)</label>
+                    <input class="form-control" name="StarID2" id="StarID2" type="text" />
+                </div>
+                <div class="col-lg-4">
+                    <label for="Email">Email</label>
+                    <input class="form-control" name="Email" id="Email" type="text" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <br />
+                    <p class="text-muted">
+                        <strong>Reminder:</strong> This is a formative assignment. Your goal is to build a repeatable workflow for evidence (screenshots), artifacts (final work), and reflection.
+                    </p>
+                    <hr />
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <h2>Formative00 Part 5 — Build Your Lifelong Student Notebook (OneNote + NotebookLM + Open Notebook)</h2>
+
+                <p>
+                    AI is powerful, but it is not magic. In this course you will learn to:
+                    <strong>collect evidence</strong> (screenshots), <strong>produce artifacts</strong> (your completed work), and <strong>reflect</strong> (what you learned and why it matters).
+                </p>
+
+                <p>
+                    In Part 5 we add a “lifelong notebook” system that you can use across every course and later in your career.
+                    This semester <strong>OneNote is required</strong>, and you will also use <strong>Google NotebookLM</strong> and <strong>Open Notebook</strong> so you can compare approaches and avoid vendor lock-in.
+                </p>
+
+                <p>After completing this assignment you will be able to:</p>
+                <ol>
+                    <li>Create a single notebook that can scale across all courses using a consistent naming system</li>
+                    <li>Create and save a reusable OneNote page template for Assignment Submission Artifacts</li>
+                    <li>Use NotebookLM for <em>source-grounded</em> study (citations to your uploaded material)</li>
+                    <li>Install Open Notebook (self-hosted, Docker) and connect it to a local Ollama model provider</li>
+                    <li>Explain how model choice + knowledge source choice affects quality, speed, cost, and privacy</li>
+                </ol>
+            </div>
+
+            <div class="col-lg-12"><a href="#Exercise50" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation (Required)</a></div>
+            <div id="Exercise50" class="collapse in col-lg-12">
+                <hr />
+
+                <p>
+                    You will document your work in OneNote and submit a single PDF to D2L.
+                    The PDF must make it possible for someone else to verify you completed each required step.
+                </p>
+                <ol>
+                    <li>Create a OneNote page named <code>Formative00_Part5</code>.</li>
+                    <li>Paste each required screenshot onto that page.</li>
+                    <li>Below each screenshot, add <strong>one verification sentence</strong> (“This screenshot verifies that I …”).</li>
+                    <li>When finished: <strong>File → Print → Microsoft Print to PDF</strong>.</li>
+                    <li>Upload the PDF to the D2L assignment folder: <strong>Formative00_Part5</strong>.</li>
+                </ol>
+
+                <hr />
+            </div>
+
+            <div class="col-lg-12"><a href="#Exercise51" class="btn btn-info" data-toggle="collapse">Exercise 1 — Create your Lifelong OneNote structure (Required)</a></div>
+            <div id="Exercise51" class="collapse in col-lg-12">
+                <hr />
+
+                <h3>Goal</h3>
+                <p>Create one notebook for <strong>all</strong> courses, with a consistent structure and naming system.</p>
+
+                <h3>Steps</h3>
+                <ol>
+                    <li>Open <strong>OneNote (desktop)</strong>.</li>
+                    <li>Create a new notebook named: <code>WSU_Student_Notebook</code> (or similar).</li>
+                    <li>Create a <strong>Section Group</strong> for this course: <code>MIS202</code>.</li>
+                    <li>Inside <code>MIS202</code>, create these Sections:
+                        <ul>
+                            <li><code>Assignments</code></li>
+                            <li><code>Class Notes</code></li>
+                            <li><code>Study Guides</code></li>
+                            <li><code>AI Prompts &amp; Outputs</code></li>
+                        </ul>
+                    </li>
+                    <li>Inside <code>Assignments</code>, create a page named <code>Artifact Template (DO NOT EDIT)</code>.</li>
+                </ol>
+
+                <h3>Screenshot Ex1</h3>
+                <p><strong>(25)</strong> Screenshot OneNote showing the notebook name and the MIS202 section group + sections. Save as <code>Ex1_StudentNotebookStructure</code> and add one verification sentence.</p>
+
+                <hr />
+            </div>
+
+            <div class="col-lg-12"><a href="#Exercise52" class="btn btn-info" data-toggle="collapse">Exercise 2 — Create a reusable Artifact Template (Required)</a></div>
+            <div id="Exercise52" class="collapse col-lg-12">
+                <hr />
+
+                <h3>Goal</h3>
+                <p>Create a reusable OneNote template that standardizes evidence + artifact + reflection.</p>
+
+                <h3>Steps</h3>
+                <ol>
+                    <li>On the <code>Artifact Template (DO NOT EDIT)</code> page, paste the official template text (provided by your instructor).</li>
+                    <li><strong>Add these improvements at the top</strong> (as a header block):
+                        <ul>
+                            <li><strong>Course / Assignment:</strong> MIS202 – ________</li>
+                            <li><strong>Date:</strong> ________</li>
+                            <li><strong>AI Tools Used:</strong> OneNote / NotebookLM / Open Notebook (circle)</li>
+                            <li><strong>Model Used (if applicable):</strong> ________ (example: <code>llama3.2:1b</code>)</li>
+                            <li><strong>Knowledge Source:</strong> (a) my own work, (b) instructor sources, (c) both</li>
+                        </ul>
+                    </li>
+                    <li>From the OneNote menu select: <strong>Insert → Page Templates → Save current page as a template</strong>.</li>
+                    <li>Name the template: <code>MIS202 – Assignment Submission Artifact</code>.</li>
+                </ol>
+
+                <h3>Screenshot Ex2</h3>
+                <p><strong>(25)</strong> Screenshot showing the template saved (Templates pane with the new template visible). Save as <code>Ex2_TemplateSaved</code> and add one verification sentence.</p>
+
+                <hr />
+            </div>
+
+            <div class="col-lg-12"><a href="#Exercise53" class="btn btn-info" data-toggle="collapse">Exercise 3 — Apply the template (Required)</a></div>
+            <div id="Exercise53" class="collapse col-lg-12">
+                <hr />
+
+                <h3>Goal</h3>
+                <p>Use your template to create a real artifact page you will reuse all semester.</p>
+
+                <h3>Steps</h3>
+                <ol>
+                    <li>Create a new page in <code>MIS202 → Assignments</code> named: <code>MIS202_Artifact_Starter</code>.</li>
+                    <li>Apply your template: <strong>Insert → Page Templates → MIS202 – Assignment Submission Artifact</strong>.</li>
+                    <li>In the “Final Check Before Submission” section, add one sentence describing what “verifiable” means in this course.</li>
+                </ol>
+
+                <h3>Screenshot Ex3</h3>
+                <p><strong>(25)</strong> Screenshot showing the new page with the template applied. Save as <code>Ex3_TemplateApplied</code> and add one verification sentence.</p>
+
+                <hr />
+            </div>
+
+            <div class="col-lg-12"><a href="#Exercise54" class="btn btn-info" data-toggle="collapse">Exercise 4 — NotebookLM (Required)</a></div>
+            <div id="Exercise54" class="collapse col-lg-12">
+                <hr />
+
+                <h3>Goal</h3>
+                <p>Experience a <strong>source-grounded</strong> notebook tool where answers include citations to your uploaded materials.</p>
+
+                <h3>Steps</h3>
+                <ol>
+                    <li>Open NotebookLM and create a notebook named: <code>MIS202 – Formative00 Part 5</code>.</li>
+                    <li>Add 2–4 sources. Minimum sources:
+                        <ul>
+                            <li>Your course instructions for Formative00 Part 4 or Part 5</li>
+                            <li>One additional course document (PDF or web page)</li>
+                        </ul>
+                    </li>
+                    <li>Ask these questions (copy/paste):
+                        <ul>
+                            <li><em>“List the required steps for this assignment as a checklist. Cite your sources.”</em></li>
+                            <li><em>“What is one likely mistake a student will make, and how can they prevent it?”</em></li>
+                        </ul>
+                    </li>
+                    <li>Export one output (study guide or notes) to Google Docs (or copy into OneNote).</li>
+                </ol>
+
+                <h3>Screenshot Ex4</h3>
+                <p><strong>(25)</strong> Screenshot showing a NotebookLM answer with citations visible. Save as <code>Ex4_NotebookLM_Citations</code> and add one verification sentence.</p>
+
+                <hr />
+            </div>
+
+            <div class="col-lg-12"><a href="#Exercise55" class="btn btn-info" data-toggle="collapse">Exercise 5 — Open Notebook (Docker) + Ollama (Required)</a></div>
+            <div id="Exercise55" class="collapse col-lg-12">
+                <hr />
+
+                <h3>Goal</h3>
+                <p>Install Open Notebook using Docker and connect it to Ollama. This gives you a vendor-neutral notebook that can run with local models.</p>
+
+                <h3>Required before you start</h3>
+                <ul>
+                    <li>Ollama installed and running on your laptop (<code>http://localhost:11434</code>)</li>
+                    <li>Docker Desktop installed (WSL2 backend)</li>
+                </ul>
+
+                <h3>Steps (Docker)</h3>
+                <ol>
+                    <li>Create a folder: <code>C:\AI\open-notebook</code></li>
+                    <li>In PowerShell 7, verify Docker + WSL2:</li>
+                </ol>
+<pre><code>docker --version
+wsl --status</code></pre>
+                <ol start="3">
+                    <li>Follow the instructor-provided <code>docker compose</code> file for Open Notebook, then start it:</li>
+                </ol>
+<pre><code>cd C:\AI\open-notebook
+docker compose up -d</code></pre>
+
+                <p class="text-muted">
+                    Note: If Open Notebook runs in Docker, it may need to reach Ollama using <code>http://host.docker.internal:11434</code> (not <code>localhost</code> inside the container).
+                </p>
+
+                <h3>Connect Open Notebook to Ollama</h3>
+                <ol>
+                    <li>Open the Open Notebook web UI in your browser.</li>
+                    <li>Go to <strong>Settings → Models</strong> (or similar).</li>
+                    <li>Create at least:
+                        <ul>
+                            <li>One <strong>Language</strong> model (example: a small Ollama model for speed)</li>
+                            <li>One <strong>Embedding</strong> model (example: an Ollama embedding model)</li>
+                        </ul>
+                    </li>
+                    <li>Set your defaults so Open Notebook uses your selected models.</li>
+                </ol>
+
+                <h3>Screenshot Ex5</h3>
+                <p><strong>(25)</strong> Screenshot showing Open Notebook running in your browser and a model/provider setting referencing Ollama. Save as <code>Ex5_OpenNotebook_Ollama</code> and add one verification sentence.</p>
+
+                <hr />
+            </div>
+
+            <div class="col-lg-12"><a href="#Exercise56" class="btn btn-info" data-toggle="collapse">Exercise 6 — Compare the three tools (Required)</a></div>
+            <div id="Exercise56" class="collapse col-lg-12">
+                <hr />
+
+                <h3>Goal</h3>
+                <p>Learn the key “AI is not magic” skill: you must choose <strong>(1) the model</strong> and <strong>(2) the knowledge source</strong> intentionally.</p>
+
+                <h3>Steps</h3>
+                <ol>
+                    <li>Pick one small course topic (example: “What is an API?” or “What is RAG?”).</li>
+                    <li>Run the same prompt in all three tools:
+                        <ul>
+                            <li><strong>OneNote</strong> (you write your own notes)</li>
+                            <li><strong>NotebookLM</strong> (must cite your uploaded sources)</li>
+                            <li><strong>Open Notebook</strong> (Ollama-based model)</li>
+                        </ul>
+                    </li>
+                    <li>In OneNote, write a short comparison (6–10 lines):
+                        <ul>
+                            <li>Which was fastest?</li>
+                            <li>Which was most trustworthy?</li>
+                            <li>Which is easiest to export/share?</li>
+                            <li>Which feels “locked in” to a vendor?</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>Screenshot Ex6</h3>
+                <p><strong>(25)</strong> Screenshot showing your comparison/reflection text in OneNote. Save as <code>Ex6_CompareTools</code> and add one verification sentence.</p>
+
+                <hr />
+            </div>
+
+            <div class="col-lg-12">
+                <hr />
+
+                <h2>Deliverable</h2>
+                <p>
+                    Submit <strong>Formative00_Part5.pdf</strong> to D2L. Your PDF must include the required screenshots (Ex1–Ex6) and verification sentences.
+                </p>
+
+                <h2>Reflection (required)</h2>
+                <p>Answer these at the bottom of your OneNote page:</p>
+                <ul>
+                    <li>What did you learn about “AI is not magic” from using three different notebook tools?</li>
+                    <li>Which tool would you use for: (a) course evidence, (b) studying from sources, (c) personal knowledge base — and why?</li>
+                    <li>What is one risk of vendor lock-in you want to avoid?</li>
+                </ul>
+
+                <hr />
+            </div>
+
+            <div class="col-lg-12">
+                <hr />
+                <input class="text-danger btn-block btn-lg" name="Submit" value="SUBMIT" type="submit" />
+                <br />
+            </div>
+
+        </div>
+    </form>
+
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+</body>
+</html>
