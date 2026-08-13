@@ -162,7 +162,7 @@
 
         <hr />
 
-        <div class="col-lg-4 h3 text-danger">175 points</div>
+        <div class="col-lg-4 h3 text-danger">225 points</div>
 
         <div id="Objectives" class="col-lg-12 ">
             <h2 class="text-center">Learning Objectives </h2>
@@ -176,7 +176,7 @@ This assignment is about establishing a working digital environment. Minor techn
             <p>After completing this assignment you will be able to:</p>
 
             <ol>
-                <li>Install and activate Visual Studio Enterprise 2022, including required modules for ASP.NET and Python development </li>
+                <li>Install and activate Visual Studio Enterprise 2022 or 2026, including required modules for ASP.NET and Python development </li>
                 <li>Configure Visual Studio settings for optimized use in this course </li>
                 <li>Create a GitHub account and verify access via screenshot </li>
                 <li>Install and verify Git for Windows, and understand its purpose in version control </li>
@@ -268,7 +268,7 @@ This assignment is about establishing a working digital environment. Minor techn
 You do not need to fully understand these tools yet—your goal here is successful installation and verification.
                     </p>
                 <p>
-                    Download and install Visual Studio Enterprise 2022 to create and maintain a website, which is how you will complete course assignments.<br />
+                    Download and install Visual Studio Enterprise 2022 or 2026 to create and maintain a website, which is how you will complete course assignments.<br />
                     Create a GitHub account which is used to obtain assignments and learn about version control.<br />
                     Version control allows many programmers to collaborate on software development without needing to be co-located.  It also allows a disciplined methodology to control this software.
                 </p>
@@ -509,6 +509,49 @@ You do not need to fully understand these tools yet—your goal here is successf
                 <h2>Screenshot Ex5C</h2>
                 <hr />
             </div>
+
+
+
+
+            <!-- =================== EXERCISE 11 =================== -->
+            <div class="col-lg-12"><a href="#Exercise5D" class="btn btn-info" data-toggle="collapse">Exercise 5D — Install & Verify PowerShell 7</a></div>
+            <div id="Exercise5D" class="collapse in col-lg-12">
+
+                <p class="text-primary">
+                    <strong>Goal:</strong> Install PowerShell 7 and confirm you can run commands in <code>pwsh</code>.
+               
+                </p>
+
+                <ol>
+                    <li>Open <strong>Windows PowerShell</strong> (not PowerShell 7 yet).</li>
+                    <li>Install PowerShell 7 using WinGet:</li>
+                </ol>
+
+                <pre><code>winget install -e --id Microsoft.PowerShell</code></pre>
+
+                <ol start="3">
+                    <li>Close Windows PowerShell and open <strong>PowerShell 7</strong> (search: <code>pwsh</code>).</li>
+                    <li>Run these verification commands:</li>
+                </ol>
+
+                <pre><code>$PSVersionTable.PSVersion
+pwsh --version
+where pwsh</code></pre>
+
+
+                <p>
+                    <br>
+                    <strong>(50)</strong> Take a screenshot showing your PowerShell 7 window with the three commands above and their output.<br>
+                    Save it as <code>Ex5D_PowerShell7</code> (png/jpg) in your OneNote artifact.<br>
+                    Add one sentence explaining what the screenshot verifies.
+               
+                </p>
+
+                <h2 class="text-danger">Screenshot Ex5D</h2>
+
+                <hr />
+            </div>
+
 
 
 
